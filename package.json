@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
     "build": "tsc -p tsconfig.json",
+    "vercel-build": "npm run build",
     "start": "node dist/server.js",
     "lint": "eslint \"src/**/*.ts\"",
     "clean": "rimraf dist"
@@ -23,7 +24,8 @@
     "helmet": "^8.0.0",
     "mongodb": "^7.5.0",
     "mongoose": "^8.9.5",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
