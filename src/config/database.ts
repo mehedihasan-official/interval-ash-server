@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import dns from "node:dns";
 import { env } from "./env";
 
 /**
@@ -21,6 +22,16 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
   }
 
   if (!global.__mongooseConnectionPromise) {
+    // Only override the DNS resolver when explicitly configured (useful
+    // on some local networks where the default resolver can't complete
+    // MongoDB Atlas's SRV lookup). Never do this unconditionally: on
+    // Vercel this forces DNS queries through a resolver Vercel's network
+    // wasn't asked to allow, which can fail in ways that are much harder
+    // to diagnose than a normal connection error.
+    if (process.env.DNS_SERVERS) {
+      dns.setServers(env.dnsServers);
+    }
+
     global.__mongooseConnectionPromise = mongoose
       .connect(env.mongodbUri, {
         dbName: "intervalAsh",
