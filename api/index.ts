@@ -1,5 +1,4 @@
 import type { IncomingMessage, ServerResponse } from "http";
-import serverless from "serverless-http";
 import { createApp } from "../src/app";
 import { connectToDatabase } from "../src/config/database";
 
@@ -9,7 +8,6 @@ import { connectToDatabase } from "../src/config/database";
 // MONGODB_URI lazily (see src/config/env.ts) — importing createApp no
 // longer has any risk of throwing before our try/catch below can run.
 const app = createApp();
-const handler = serverless(app);
 
 /**
  * Vercel serverless entrypoint.
@@ -28,8 +26,12 @@ const handler = serverless(app);
  */
 export default async function (req: IncomingMessage, res: ServerResponse) {
   try {
-    await connectToDatabase();
-    return (await handler(req, res)) as unknown;
+    const requestPath = req.url?.split("?")[0] || "/";
+    if (requestPath.startsWith("/api/")) {
+      await connectToDatabase();
+    }
+    app(req as never, res as never);
+    return undefined;
   } catch (error) {
     console.error("Serverless function failed to initialize:", error);
     if (!res.headersSent) {
