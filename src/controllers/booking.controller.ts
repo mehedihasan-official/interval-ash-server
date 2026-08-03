@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { BookingModel } from '../models/booking.model';
+import { UserModel } from '../models/user.model';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
 import { AppError } from '../utils/app-error';
@@ -39,7 +40,32 @@ export const createBooking = catchAsync(async (req: Request, res: Response) => {
     throw new AppError('A booking must include a user email', 400);
   }
 
-  const newBooking = await BookingModel.create(bookingData);
+  const normalizedEmail = String(bookingData.email).trim().toLowerCase();
+
+  if (bookingData.paymentMethod === 'points' && Number(bookingData.points) > 0) {
+    const pointsToDeduct = Number(bookingData.points);
+    const updatedUser = await UserModel.findOneAndUpdate(
+      {
+        email: normalizedEmail,
+        points: { $gte: pointsToDeduct },
+      },
+      {
+        $inc: {
+          points: -pointsToDeduct,
+        },
+      },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      throw new AppError('You do not have enough points for this booking.', 400);
+    }
+  }
+
+  const newBooking = await BookingModel.create({
+    ...bookingData,
+    email: normalizedEmail,
+  });
   sendResponse(res, 201, 'Booking created successfully', newBooking);
 });
 

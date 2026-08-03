@@ -12,6 +12,8 @@ export interface IUser extends Document {
   age?: number;
   securityDeposit?: number;
   idNumber?: string;
+  points: number;
+  cashBalance: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -43,6 +45,14 @@ const userSchema = new Schema<IUser>(
     idNumber: {
       type: String,
       trim: true,
+    },
+    points: {
+      type: Number,
+      default: 0,
+    },
+    cashBalance: {
+      type: Number,
+      default: 0,
     },
   },
   {

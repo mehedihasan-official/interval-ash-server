@@ -39,12 +39,19 @@ export const createUser = catchAsync(async (req: Request, res: Response) => {
     throw new AppError('Name and email are required', 400);
   }
 
-  const existingUser = await UserModel.findOne({ email });
+  const normalizedEmail = String(email).trim().toLowerCase();
+  const existingUser = await UserModel.findOne({ email: normalizedEmail });
   if (existingUser) {
-    throw new AppError('A user with this email already exists', 409);
+    sendResponse(res, 200, 'User already exists', existingUser);
+    return;
   }
 
-  const newUser = await UserModel.create(req.body);
+  const newUser = await UserModel.create({
+    ...req.body,
+    email: normalizedEmail,
+    points: 1000,
+    cashBalance: 0,
+  });
   sendResponse(res, 201, 'User created successfully', newUser);
 });
 
