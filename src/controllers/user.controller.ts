@@ -57,7 +57,9 @@ export const createUser = catchAsync(async (req: Request, res: Response) => {
 
 /**
  * PATCH /api/users/role
- * Update a user's admin status.
+ * Update a user's admin status. Also aliased at PATCH /api/update-user
+ * (see routes/index.ts) since that's the path the admin panel client
+ * calls.
  */
 export const updateUserRole = catchAsync(async (req: Request, res: Response) => {
   const { email, isAdmin } = req.body;
@@ -66,8 +68,30 @@ export const updateUserRole = catchAsync(async (req: Request, res: Response) => 
     throw new AppError('Email and a boolean isAdmin value are required', 400);
   }
 
+  const normalizedEmail = String(email).trim().toLowerCase();
+  const target = await UserModel.findOne({ email: normalizedEmail });
+  if (!target) {
+    throw new AppError('User not found', 404);
+  }
+
+  // Guard against ending up with zero admins: if this request would
+  // demote the last remaining admin, reject it. There's no auth layer
+  // yet to know *who* is making the request, so this can't stop a
+  // specific admin from demoting themselves — but it does stop the
+  // system from ever being left with no admin at all, which is the
+  // failure this guard actually needs to prevent.
+  if (target.isAdmin && !isAdmin) {
+    const otherAdminCount = await UserModel.countDocuments({
+      isAdmin: true,
+      email: { $ne: normalizedEmail },
+    });
+    if (otherAdminCount === 0) {
+      throw new AppError('At least one admin account must remain.', 400);
+    }
+  }
+
   const updatedUser = await UserModel.findOneAndUpdate(
-    { email },
+    { email: normalizedEmail },
     { $set: { isAdmin } },
     { new: true } // Return the document after the update is applied
   );

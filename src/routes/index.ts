@@ -3,6 +3,7 @@ import userRoutes from './user.routes';
 import resortRoutes from './resort.routes';
 import bookingRoutes from './booking.routes';
 import walletRoutes from './wallet.routes';
+import { getAllUsers, updateUserRole } from '../controllers/user.controller';
 
 /**
  * Central router. Every resource gets its own file and its own base path;
@@ -15,5 +16,13 @@ router.use('/users', userRoutes);
 router.use('/resorts', resortRoutes);
 router.use('/bookings', bookingRoutes);
 router.use('/wallet', walletRoutes);
+
+// Aliases for the admin panel client, which calls these two flatter paths
+// instead of the REST-nested /users and /users/role routes above. Both
+// point at the exact same controllers, so behavior is identical either
+// way — this just satisfies the URLs the client already calls without
+// duplicating any logic.
+router.get('/all-users', getAllUsers);
+router.patch('/update-user', updateUserRole);
 
 export default router;

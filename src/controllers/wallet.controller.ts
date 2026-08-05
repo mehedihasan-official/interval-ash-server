@@ -4,7 +4,7 @@ import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
 import { AppError } from '../utils/app-error';
 
-const POINTS_TO_USD_RATE = 0.025;
+const POINTS_TO_USD_RATE = 0.05;
 const COMMISSION_RATE = 0.3;
 
 function roundCurrency(value: number): number {

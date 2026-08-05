@@ -39,6 +39,16 @@ export const createResort = catchAsync(async (req: Request, res: Response) => {
     throw new AppError('Resort data cannot be empty', 400);
   }
 
+  // The schema's required field is `name`, but the admin panel's resort
+  // form (and the wider frontend, which reads getResortName() falling
+  // back through resortName/place_name) sends `resortName` instead.
+  // Fill `name` in from it here so a resort created via the admin form
+  // still passes schema validation without the client needing to send
+  // a field the rest of the app doesn't otherwise use.
+  if (!resortData.name && resortData.resortName) {
+    resortData.name = resortData.resortName;
+  }
+
   const newResort = await ResortModel.create(resortData);
   sendResponse(res, 201, 'Resort created successfully', newResort);
 });
