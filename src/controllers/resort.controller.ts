@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { FilterQuery } from 'mongoose';
 import { ResortModel } from '../models/resort.model';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
@@ -6,11 +7,78 @@ import { AppError } from '../utils/app-error';
 
 /**
  * GET /api/resorts
- * Fetch every resort in the database.
+ * Fetch resorts with optional filtering, search, and pagination.
  */
-export const getAllResorts = catchAsync(async (_req: Request, res: Response) => {
-  const resorts = await ResortModel.find();
-  sendResponse(res, 200, 'Resorts retrieved successfully', resorts);
+export const getAllResorts = catchAsync(async (req: Request, res: Response) => {
+  const search = String(req.query.search || '').trim();
+  const location = String(req.query.location || '').trim();
+  const minPrice = Number(req.query.minPrice);
+  const maxPrice = Number(req.query.maxPrice);
+  const page = Math.max(1, Number(req.query.page) || 1);
+  const limit = Math.min(100, Math.max(1, Number(req.query.limit) || 50));
+
+  const filter: FilterQuery<typeof ResortModel> = {};
+  const clauses: FilterQuery<typeof ResortModel>[] = [];
+
+  if (search) {
+    const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const searchRegex = new RegExp(escaped, 'i');
+    clauses.push({
+      $or: [
+        { name: searchRegex },
+        { location: searchRegex },
+        { description: searchRegex },
+        { country: searchRegex },
+        { region: searchRegex },
+        { resortName: searchRegex },
+        { place_name: searchRegex },
+        { symbol: searchRegex },
+      ],
+    });
+  }
+
+  if (location) {
+    const escaped = location.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const locationRegex = new RegExp(escaped, 'i');
+    clauses.push({
+      $or: [
+        { location: locationRegex },
+        { country: locationRegex },
+        { region: locationRegex },
+      ],
+    });
+  }
+
+  if (!Number.isNaN(minPrice) || !Number.isNaN(maxPrice)) {
+    const priceFilter: FilterQuery<typeof ResortModel> = {};
+    if (!Number.isNaN(minPrice)) {
+      priceFilter.$gte = minPrice;
+    }
+    if (!Number.isNaN(maxPrice)) {
+      priceFilter.$lte = maxPrice;
+    }
+    clauses.push({ pricePerNight: priceFilter });
+  }
+
+  if (clauses.length > 0) {
+    filter.$and = clauses;
+  }
+
+  const total = await ResortModel.countDocuments(filter);
+  const resorts = await ResortModel.find(filter)
+    .sort({ name: 1 })
+    .skip((page - 1) * limit)
+    .limit(limit);
+
+  sendResponse(res, 200, 'Resorts retrieved successfully', {
+    resorts,
+    pagination: {
+      page,
+      limit,
+      total,
+      totalPages: total > 0 ? Math.ceil(total / limit) : 0,
+    },
+  });
 });
 
 /**

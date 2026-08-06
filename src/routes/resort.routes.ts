@@ -6,13 +6,18 @@ import {
   updateResort,
   deleteResort,
 } from '../controllers/resort.controller';
+import { requireAdmin } from '../middlewares/require-admin';
 
 const router = Router();
 
+// Reads stay public — the resort directory is browsable by anyone.
 router.get('/', getAllResorts);
 router.get('/:id', getResortById);
-router.post('/', createResort);
-router.patch('/:id', updateResort);
-router.delete('/:id', deleteResort);
+
+// Writes are admin-only. requireAdmin runs first so an unauthorized
+// request never reaches the database.
+router.post('/', requireAdmin, createResort);
+router.patch('/:id', requireAdmin, updateResort);
+router.delete('/:id', requireAdmin, deleteResort);
 
 export default router;

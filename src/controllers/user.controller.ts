@@ -8,7 +8,19 @@ import { AppError } from '../utils/app-error';
  * GET /api/users
  * Fetch every user in the database.
  */
-export const getAllUsers = catchAsync(async (_req: Request, res: Response) => {
+export const getAllUsers = catchAsync(async (req: Request, res: Response) => {
+  const email = String(req.query.email || '').trim().toLowerCase();
+
+  if (email) {
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      throw new AppError('User not found', 404);
+    }
+
+    sendResponse(res, 200, 'User retrieved successfully', user);
+    return;
+  }
+
   const users = await UserModel.find();
   sendResponse(res, 200, 'Users retrieved successfully', users);
 });
@@ -19,8 +31,9 @@ export const getAllUsers = catchAsync(async (_req: Request, res: Response) => {
  */
 export const getUserByEmail = catchAsync(async (req: Request, res: Response) => {
   const { email } = req.params;
+  const normalizedEmail = String(email).trim().toLowerCase();
 
-  const user = await UserModel.findOne({ email });
+  const user = await UserModel.findOne({ email: normalizedEmail });
   if (!user) {
     throw new AppError('User not found', 404);
   }
@@ -114,8 +127,9 @@ export const updateUserInfo = catchAsync(async (req: Request, res: Response) => 
     throw new AppError('Email is required', 400);
   }
 
+  const normalizedEmail = String(email).trim().toLowerCase();
   const updatedUser = await UserModel.findOneAndUpdate(
-    { email },
+    { email: normalizedEmail },
     { $set: { age, securityDeposit, idNumber } },
     { new: true }
   );

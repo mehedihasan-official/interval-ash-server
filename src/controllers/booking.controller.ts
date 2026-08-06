@@ -62,10 +62,30 @@ export const createBooking = catchAsync(async (req: Request, res: Response) => {
     }
   }
 
-  const newBooking = await BookingModel.create({
+  const bookingToSave: Record<string, unknown> = {
     ...bookingData,
     email: normalizedEmail,
-  });
+    points: Number(bookingData.points) || 0,
+    price: Number(bookingData.price) || 0,
+    nights: Number(bookingData.nights) || 0,
+  };
+
+  if (bookingToSave.paymentDetails && bookingData.paymentMethod === 'cash') {
+    const cardNumber = String(
+      (bookingData.paymentDetails as { cardNumber?: string }).cardNumber || '',
+    ).replace(/\D/g, '');
+    bookingToSave.paymentDetails = {
+      cardNumber: cardNumber ? `**** **** **** ${cardNumber.slice(-4)}` : undefined,
+      expiryDate: String(
+        (bookingData.paymentDetails as { expiryDate?: string }).expiryDate || '',
+      ),
+      cvv: undefined,
+    };
+  } else {
+    bookingToSave.paymentDetails = null;
+  }
+
+  const newBooking = await BookingModel.create(bookingToSave);
   sendResponse(res, 201, 'Booking created successfully', newBooking);
 });
 
