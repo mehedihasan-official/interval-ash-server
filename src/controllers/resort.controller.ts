@@ -1,21 +1,39 @@
 import { Request, Response } from 'express';
 import { FilterQuery } from 'mongoose';
 import { ResortModel } from '../models/resort.model';
+import { AppError } from '../utils/app-error';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
-import { AppError } from '../utils/app-error';
 
 /**
  * GET /api/resorts
- * Fetch resorts with optional filtering, search, and pagination.
+ * Fetch resorts with optional filtering/search. By default the public
+ * endpoint returns the complete resort dataset so client-side resort search
+ * has every database record available. Callers that need a smaller response
+ * can opt into pagination by sending page and/or limit.
  */
 export const getAllResorts = catchAsync(async (req: Request, res: Response) => {
   const search = String(req.query.search || '').trim();
   const location = String(req.query.location || '').trim();
   const minPrice = Number(req.query.minPrice);
   const maxPrice = Number(req.query.maxPrice);
-  const page = Math.max(1, Number(req.query.page) || 1);
-  const limit = Math.min(100, Math.max(1, Number(req.query.limit) || 50));
+  const hasPriceFilter = !Number.isNaN(minPrice) || !Number.isNaN(maxPrice);
+
+  // A bare GET /api/resorts must return all resorts for the public search
+  // dataset. Pagination is opt-in for admin/list views that send page/limit.
+  const explicitAll = ['true', '1', 'yes'].includes(
+    String(req.query.all || '').trim().toLowerCase()
+  );
+  const hasPaginationParams =
+    req.query.page !== undefined || req.query.limit !== undefined;
+  const shouldPaginate = hasPaginationParams && !explicitAll;
+
+  const parsedPage = Number.parseInt(String(req.query.page), 10);
+  const parsedLimit = Number.parseInt(String(req.query.limit), 10);
+  const page = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+  const limit = Number.isFinite(parsedLimit) && parsedLimit > 0
+    ? parsedLimit
+    : 50;
 
   const filter: FilterQuery<typeof ResortModel> = {};
   const clauses: FilterQuery<typeof ResortModel>[] = [];
@@ -33,6 +51,14 @@ export const getAllResorts = catchAsync(async (req: Request, res: Response) => {
         { resortName: searchRegex },
         { place_name: searchRegex },
         { symbol: searchRegex },
+        { continent: searchRegex },
+        { city: searchRegex },
+        { state: searchRegex },
+        { province: searchRegex },
+        { destination: searchRegex },
+        { area: searchRegex },
+        { resortArea: searchRegex },
+        { address: searchRegex },
       ],
     });
   }
@@ -45,11 +71,19 @@ export const getAllResorts = catchAsync(async (req: Request, res: Response) => {
         { location: locationRegex },
         { country: locationRegex },
         { region: locationRegex },
+        { continent: locationRegex },
+        { city: locationRegex },
+        { state: locationRegex },
+        { province: locationRegex },
+        { destination: locationRegex },
+        { area: locationRegex },
+        { resortArea: locationRegex },
+        { address: locationRegex },
       ],
     });
   }
 
-  if (!Number.isNaN(minPrice) || !Number.isNaN(maxPrice)) {
+  if (hasPriceFilter) {
     const priceFilter: FilterQuery<typeof ResortModel> = {};
     if (!Number.isNaN(minPrice)) {
       priceFilter.$gte = minPrice;
@@ -65,18 +99,28 @@ export const getAllResorts = catchAsync(async (req: Request, res: Response) => {
   }
 
   const total = await ResortModel.countDocuments(filter);
-  const resorts = await ResortModel.find(filter)
-    .sort({ name: 1 })
-    .skip((page - 1) * limit)
-    .limit(limit);
+  const resortQuery = ResortModel.find(filter).sort({ name: 1 });
+
+  if (shouldPaginate) {
+    resortQuery.skip((page - 1) * limit).limit(limit);
+  }
+
+  const resorts = await resortQuery;
+  const responsePage = shouldPaginate ? page : 1;
+  const responseLimit = shouldPaginate ? limit : total;
+  const totalPages = shouldPaginate
+    ? Math.ceil(total / limit)
+    : total > 0
+      ? 1
+      : 0;
 
   sendResponse(res, 200, 'Resorts retrieved successfully', {
     resorts,
     pagination: {
-      page,
-      limit,
+      page: responsePage,
+      limit: responseLimit,
       total,
-      totalPages: total > 0 ? Math.ceil(total / limit) : 0,
+      totalPages,
     },
   });
 });
