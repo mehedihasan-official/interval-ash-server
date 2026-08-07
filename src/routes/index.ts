@@ -3,6 +3,9 @@ import userRoutes from './user.routes';
 import resortRoutes from './resort.routes';
 import bookingRoutes from './booking.routes';
 import walletRoutes from './wallet.routes';
+import airportRoutes from './airport.routes';
+import flightRoutes from './flight.routes';
+import flightBookingRoutes from './flight-booking.routes';
 import { getAllUsers, updateUserRole } from '../controllers/user.controller';
 
 /**
@@ -16,6 +19,9 @@ router.use('/users', userRoutes);
 router.use('/resorts', resortRoutes);
 router.use('/bookings', bookingRoutes);
 router.use('/wallet', walletRoutes);
+router.use('/airports', airportRoutes);
+router.use('/flights', flightRoutes);
+router.use('/flight-bookings', flightBookingRoutes);
 
 // Aliases for the admin panel client, which calls these two flatter paths
 // instead of the REST-nested /users and /users/role routes above. Both

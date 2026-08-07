@@ -1,0 +1,4712 @@
+[
+  {
+    "code": "MSZ",
+    "city": "Mocamedes",
+    "name": "Namibe Airport",
+    "country": "Angola"
+  },
+  {
+    "code": "AEP",
+    "city": "Buenos Aires",
+    "name": "Jorge Newbery Airpark",
+    "country": "Argentina"
+  },
+  {
+    "code": "EZE",
+    "city": "Buenos Aires",
+    "name": "Ministro Pistarini International Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "COR",
+    "city": "Cordoba",
+    "name": "Ingeniero Ambrosio Taravella Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "CNQ",
+    "city": "Corrientes",
+    "name": "Corrientes Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "GNR",
+    "city": "Fuerte Gral Roca",
+    "name": "Dr. Arturo H. Illia Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "IGR",
+    "city": "Iguazu Falls",
+    "name": "Cataratas Del Iguazú International Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "MDZ",
+    "city": "Mendoza",
+    "name": "El Plumerillo Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "NQN",
+    "city": "Neuquen",
+    "name": "Presidente Peron Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "PMQ",
+    "city": "Perito Moreno",
+    "name": "Perito Moreno Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "PSS",
+    "city": "Posadas",
+    "name": "Libertador Gral D Jose De San Martin Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "ROS",
+    "city": "Rosario",
+    "name": "Islas Malvinas Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "SLA",
+    "city": "Salta",
+    "name": "Martin Miguel De Guemes International Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "BRC",
+    "city": "San Carlos De Bariloche",
+    "name": "San Carlos De Bariloche Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "LUQ",
+    "city": "San Luis",
+    "name": "Brigadier Mayor D Cesar Raul Ojeda Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "AFA",
+    "city": "San Rafael",
+    "name": "Suboficial Ay Santiago Germano Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "SFN",
+    "city": "Santa Fe",
+    "name": "Sauce Viejo Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "RSA",
+    "city": "Santa Rosa",
+    "name": "Santa Rosa Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "REL",
+    "city": "Trelew",
+    "name": "Almirante Marco Andres Zar Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "TUC",
+    "city": "Tucuman",
+    "name": "Teniente Benjamin Matienzo Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "USH",
+    "city": "Ushuaia",
+    "name": "Malvinas Argentinas Airport",
+    "country": "Argentina"
+  },
+  {
+    "code": "EVN",
+    "city": "Yerevan",
+    "name": "Zvartnots International Airport",
+    "country": "Armenia"
+  },
+  {
+    "code": "AUA",
+    "city": "Oranjestad",
+    "name": "Queen Beatrix International Airport",
+    "country": "Aruba"
+  },
+  {
+    "code": "ADL",
+    "city": "Adelaide",
+    "name": "Adelaide International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "BNE",
+    "city": "Brisbane",
+    "name": "Brisbane International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "CNS",
+    "city": "Cairns",
+    "name": "Cairns International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "CBR",
+    "city": "Canberra",
+    "name": "Canberra International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "OOL",
+    "city": "Coolangatta",
+    "name": "Gold Coast Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "DRW",
+    "city": "Darwin",
+    "name": "Darwin International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "GUL",
+    "city": "Goulburn",
+    "name": "Goulburn Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "HBA",
+    "city": "Hobart",
+    "name": "Hobart International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "LST",
+    "city": "Launceston",
+    "name": "Launceston Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "MKY",
+    "city": "Mackay",
+    "name": "Mackay Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "MEL",
+    "city": "Melbourne",
+    "name": "Melbourne International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "PER",
+    "city": "Perth",
+    "name": "Perth International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "SYD",
+    "city": "Sydney",
+    "name": "Sydney Kingsford Smith International Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "TSV",
+    "city": "Townsville",
+    "name": "Townsville Airport",
+    "country": "Australia"
+  },
+  {
+    "code": "VIE",
+    "city": "Vienna",
+    "name": "Vienna International Airport",
+    "country": "Austria"
+  },
+  {
+    "code": "GYD",
+    "city": "Baku",
+    "name": "Heydar Aliyev International Airport",
+    "country": "Azerbaijan"
+  },
+  {
+    "code": "SAQ",
+    "city": "San Andros",
+    "name": "San Andros Airport",
+    "country": "Bahamas"
+  },
+  {
+    "code": "BAH",
+    "city": "Bahrain",
+    "name": "Bahrain International Airport",
+    "country": "Bahrain"
+  },
+  {
+    "code": "BZL",
+    "city": "Barisal",
+    "name": "Barisal Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "CGP",
+    "city": "Chittagong",
+    "name": "Shah Amanat International Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "CXB",
+    "city": "Cox's Bazar",
+    "name": "Cox's Bazar Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "DAC",
+    "city": "Dhaka",
+    "name": "Hazrat Shahjalal International Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "IRD",
+    "city": "Ishurdi",
+    "name": "Ishurdi Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "JSR",
+    "city": "Jessore",
+    "name": "Jessore Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "RJH",
+    "city": "Rajshahi",
+    "name": "Shah Mokhdum Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "SPD",
+    "city": "Saidpur",
+    "name": "Saidpur Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "ZYL",
+    "city": "Sylhet Osmani",
+    "name": "Osmany International Airport",
+    "country": "Bangladesh"
+  },
+  {
+    "code": "BGI",
+    "city": "Bridgetown",
+    "name": "Sir Grantley Adams International Airport",
+    "country": "Barbados"
+  },
+  {
+    "code": "MSQ",
+    "city": "Minsk 2",
+    "name": "Minsk National Airport",
+    "country": "Belarus"
+  },
+  {
+    "code": "BRU",
+    "city": "Brussels",
+    "name": "Brussels Airport",
+    "country": "Belgium"
+  },
+  {
+    "code": "BZE",
+    "city": "Belize City",
+    "name": "Philip S. W. Goldson International Airport",
+    "country": "Belize"
+  },
+  {
+    "code": "PBH",
+    "city": "Thimphu",
+    "name": "Paro Airport",
+    "country": "Bhutan"
+  },
+  {
+    "code": "CBB",
+    "city": "Cochabamba",
+    "name": "Jorge Wilsterman International Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "LPB",
+    "city": "La Paz",
+    "name": "El Alto International Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "POI",
+    "city": "Potosi",
+    "name": "Capitan Nicolas Rojas Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "SBL",
+    "city": "Santa Ana",
+    "name": "Santa Ana Del Yacuma Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "VVI",
+    "city": "Santa Cruz",
+    "name": "Viru Viru International Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "SRE",
+    "city": "Sucre",
+    "name": "Juana Azurduy De Padilla Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "TJA",
+    "city": "Tarija",
+    "name": "Capitan Oriel Lea Plaza Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "TDD",
+    "city": "Trinidad",
+    "name": "Teniente Av. Jorge Henrich Arauz Airport",
+    "country": "Bolivia"
+  },
+  {
+    "code": "OMO",
+    "city": "Mostar",
+    "name": "Mostar International Airport",
+    "country": "Bosnia and Herzegovina"
+  },
+  {
+    "code": "TZL",
+    "city": "Null",
+    "name": "Tuzla International Airport",
+    "country": "Bosnia and Herzegovina"
+  },
+  {
+    "code": "SJJ",
+    "city": "Sarajevo",
+    "name": "Sarajevo International Airport",
+    "country": "Bosnia and Herzegovina"
+  },
+  {
+    "code": "BEL",
+    "city": "Belem",
+    "name": "Val de Cans/Júlio Cezar Ribeiro International Airport",
+    "country": "Brazil"
+  },
+  {
+    "code": "NYU",
+    "city": "Bagan",
+    "name": "Bagan Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "TVY",
+    "city": "Dawei",
+    "name": "Dawei Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "HEH",
+    "city": "Heho",
+    "name": "Heho Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "KAW",
+    "city": "Kawthoung",
+    "name": "Kawthoung Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "MDL",
+    "city": "Mandalay",
+    "name": "Mandalay International Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "MNU",
+    "city": "Mawlamyine",
+    "name": "Mawlamyine Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "MYT",
+    "city": "Myitkyina",
+    "name": "Myitkyina Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "NYT",
+    "city": "Naypyidaw",
+    "name": "Naypyidaw Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "SNW",
+    "city": "Thandwe",
+    "name": "Thandwe Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "RGN",
+    "city": "Yangon",
+    "name": "Yangon International Airport",
+    "country": "Burma"
+  },
+  {
+    "code": "PNH",
+    "city": "Phnom-penh",
+    "name": "Phnom Penh International Airport",
+    "country": "Cambodia"
+  },
+  {
+    "code": "REP",
+    "city": "Siem-reap",
+    "name": "Siem Reap International Airport",
+    "country": "Cambodia"
+  },
+  {
+    "code": "KOS",
+    "city": "Sihanoukville",
+    "name": "Sihanoukville International Airport",
+    "country": "Cambodia"
+  },
+  {
+    "code": "BFX",
+    "city": "Bafoussam",
+    "name": "Bafoussam Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "DLA",
+    "city": "Douala",
+    "name": "Douala International Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "GOU",
+    "city": "Garoua",
+    "name": "Garoua International Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "MVR",
+    "city": "Maroua",
+    "name": "Salak Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "NGE",
+    "city": "N'gaoundere",
+    "name": "N'Gaoundéré Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "YAO",
+    "city": "Yaounde",
+    "name": "Yaoundé Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "NSI",
+    "city": "Yaounde",
+    "name": "Yaoundé Nsimalen International Airport",
+    "country": "Cameroon"
+  },
+  {
+    "code": "YYC",
+    "city": "Calgary",
+    "name": "Calgary International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YTE",
+    "city": "Cape Dorset",
+    "name": "Cape Dorset Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YHR",
+    "city": "Chevery",
+    "name": "Chevery Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YZS",
+    "city": "Coral Harbour",
+    "name": "Coral Harbour Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YEG",
+    "city": "Edmonton",
+    "name": "Edmonton International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YFS",
+    "city": "Fort Simpson",
+    "name": "Fort Simpson Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YHZ",
+    "city": "Halifax",
+    "name": "Halifax / Stanfield International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YFB",
+    "city": "Iqaluit",
+    "name": "Iqaluit Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YKA",
+    "city": "Kamloops",
+    "name": "Kamloops Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YXU",
+    "city": "London",
+    "name": "London Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YUL",
+    "city": "Montreal",
+    "name": "Montreal / Pierre Elliott Trudeau International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YOW",
+    "city": "Ottawa",
+    "name": "Ottawa Macdonald-Cartier International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YPR",
+    "city": "Prince Pupert",
+    "name": "Prince Rupert Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YQB",
+    "city": "Quebec",
+    "name": "Quebec Jean Lesage International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YXE",
+    "city": "Saskatoon",
+    "name": "Saskatoon John G. Diefenbaker International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YZV",
+    "city": "Sept-iles",
+    "name": "Sept-Îles Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YTH",
+    "city": "Thompson",
+    "name": "Thompson Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YYZ",
+    "city": "Toronto",
+    "name": "Lester B. Pearson International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YBE",
+    "city": "Uranium City",
+    "name": "Uranium City Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YVR",
+    "city": "Vancouver",
+    "name": "Vancouver International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YYJ",
+    "city": "Victoria",
+    "name": "Victoria International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YXY",
+    "city": "Whitehorse",
+    "name": "Whitehorse / Erik Nielsen International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YWG",
+    "city": "Winnipeg",
+    "name": "Winnipeg / James Armstrong Richardson International Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "YZF",
+    "city": "Yellowknife",
+    "name": "Yellowknife Airport",
+    "country": "Canada"
+  },
+  {
+    "code": "BGF",
+    "city": "Bangui",
+    "name": "Bangui M'Poko International Airport",
+    "country": "Central African Republic"
+  },
+  {
+    "code": "BHY",
+    "city": "Beihai",
+    "name": "Beihai Airport",
+    "country": "China"
+  },
+  {
+    "code": "PEK",
+    "city": "Beijing",
+    "name": "Beijing Capital International Airport",
+    "country": "China"
+  },
+  {
+    "code": "PKX",
+    "city": "Beijing",
+    "name": "Beijing Daxing International Airport",
+    "country": "China"
+  },
+  {
+    "code": "CSX",
+    "city": "Changcha",
+    "name": "Changsha Huanghua International Airport",
+    "country": "China"
+  },
+  {
+    "code": "CGQ",
+    "city": "Changchun",
+    "name": "Longjia Airport",
+    "country": "China"
+  },
+  {
+    "code": "CTU",
+    "city": "Chengdu",
+    "name": "Chengdu Shuangliu International Airport",
+    "country": "China"
+  },
+  {
+    "code": "DDG",
+    "city": "Dandong",
+    "name": "Dandong Airport",
+    "country": "China"
+  },
+  {
+    "code": "FOC",
+    "city": "Fuzhou",
+    "name": "Fuzhou Changle International Airport",
+    "country": "China"
+  },
+  {
+    "code": "CAN",
+    "city": "Guangzhou",
+    "name": "Guangzhou Baiyun International Airport",
+    "country": "China"
+  },
+  {
+    "code": "HAK",
+    "city": "Haikou",
+    "name": "Haikou Meilan International Airport",
+    "country": "China"
+  },
+  {
+    "code": "HGH",
+    "city": "Hangzhou",
+    "name": "Hangzhou Xiaoshan International Airport",
+    "country": "China"
+  },
+  {
+    "code": "HFE",
+    "city": "Hefei",
+    "name": "Hefei Luogang International Airport",
+    "country": "China"
+  },
+  {
+    "code": "HET",
+    "city": "Hohhot",
+    "name": "Baita International Airport",
+    "country": "China"
+  },
+  {
+    "code": "TNA",
+    "city": "Jinan",
+    "name": "Yaoqiang Airport",
+    "country": "China"
+  },
+  {
+    "code": "JNG",
+    "city": "Jining",
+    "name": "Jining Qufu Airport",
+    "country": "China"
+  },
+  {
+    "code": "KMG",
+    "city": "Kunming",
+    "name": "Kunming Changshui International Airport",
+    "country": "China"
+  },
+  {
+    "code": "LHW",
+    "city": "Lanzhou",
+    "name": "Lanzhou Zhongchuan Airport",
+    "country": "China"
+  },
+  {
+    "code": "LZH",
+    "city": "Liuzhou",
+    "name": "Liuzhou Bailian Airport",
+    "country": "China"
+  },
+  {
+    "code": "MDG",
+    "city": "Mudanjiang",
+    "name": "Mudanjiang Hailang International Airport",
+    "country": "China"
+  },
+  {
+    "code": "KHN",
+    "city": "Nanchang",
+    "name": "Nanchang Changbei International Airport",
+    "country": "China"
+  },
+  {
+    "code": "NKG",
+    "city": "Nanjing",
+    "name": "Nanjing Lukou Airport",
+    "country": "China"
+  },
+  {
+    "code": "NGB",
+    "city": "Ninbo",
+    "name": "Ningbo Lishe International Airport",
+    "country": "China"
+  },
+  {
+    "code": "TAO",
+    "city": "Qingdao",
+    "name": "Liuting Airport",
+    "country": "China"
+  },
+  {
+    "code": "SHA",
+    "city": "Shanghai",
+    "name": "Shanghai Hongqiao International Airport",
+    "country": "China"
+  },
+  {
+    "code": "PVG",
+    "city": "Shanghai",
+    "name": "Shanghai Pudong International Airport",
+    "country": "China"
+  },
+  {
+    "code": "SWA",
+    "city": "Shantou",
+    "name": "Jieyang Chaoshan International Airport",
+    "country": "China"
+  },
+  {
+    "code": "SZX",
+    "city": "Shenzhen",
+    "name": "Shenzhen Bao'an International Airport",
+    "country": "China"
+  },
+  {
+    "code": "SJW",
+    "city": "Shijiazhuang",
+    "name": "Shijiazhuang Daguocun International Airport",
+    "country": "China"
+  },
+  {
+    "code": "TYN",
+    "city": "Taiyuan",
+    "name": "Taiyuan Wusu Airport",
+    "country": "China"
+  },
+  {
+    "code": "TSN",
+    "city": "Tianjin",
+    "name": "Tianjin Binhai International Airport",
+    "country": "China"
+  },
+  {
+    "code": "URC",
+    "city": "Urumqi",
+    "name": "Ürümqi Diwopu International Airport",
+    "country": "China"
+  },
+  {
+    "code": "WNZ",
+    "city": "Wenzhou",
+    "name": "Wenzhou Longwan International Airport",
+    "country": "China"
+  },
+  {
+    "code": "WUH",
+    "city": "Wuhan",
+    "name": "Wuhan Tianhe International Airport",
+    "country": "China"
+  },
+  {
+    "code": "XIY",
+    "city": "Xi'an",
+    "name": "Xi'an Xianyang International Airport",
+    "country": "China"
+  },
+  {
+    "code": "XMN",
+    "city": "Xiamen",
+    "name": "Xiamen Gaoqi International Airport",
+    "country": "China"
+  },
+  {
+    "code": "YNT",
+    "city": "Yantai",
+    "name": "Yantai Laishan Airport",
+    "country": "China"
+  },
+  {
+    "code": "ZHY",
+    "city": "Zhongwei",
+    "name": "Zhongwei Shapotou Airport",
+    "country": "China"
+  },
+  {
+    "code": "BAQ",
+    "city": "Barranquilla",
+    "name": "Ernesto Cortissoz International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "BOG",
+    "city": "Bogota",
+    "name": "El Dorado International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "BGA",
+    "city": "Bucaramanga",
+    "name": "Palonegro Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "CLO",
+    "city": "Cali",
+    "name": "Alfonso Bonilla Aragon International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "CTG",
+    "city": "Cartagena",
+    "name": "Rafael Nuñez International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "CUC",
+    "city": "Cucuta",
+    "name": "Camilo Daza International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "IBE",
+    "city": "Ibague",
+    "name": "Perales Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "EOH",
+    "city": "Medellin",
+    "name": "Enrique Olaya Herrera Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "NVA",
+    "city": "Neiva",
+    "name": "Benito Salas Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "PEI",
+    "city": "Pereira",
+    "name": "Matecaña International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "MDE",
+    "city": "Rio Negro",
+    "name": "Jose Maria Córdova International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "SMR",
+    "city": "Santa Marta",
+    "name": "Simón Bolívar International Airport",
+    "country": "Colombia"
+  },
+  {
+    "code": "BZV",
+    "city": "Brazzaville",
+    "name": "Maya-Maya Airport",
+    "country": "Congo (Brazzaville)"
+  },
+  {
+    "code": "PNR",
+    "city": "Pointe-noire",
+    "name": "Pointe Noire Airport",
+    "country": "Congo (Brazzaville)"
+  },
+  {
+    "code": "BUX",
+    "city": "Bunia",
+    "name": "Bunia Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "BDT",
+    "city": "Gbadolite",
+    "name": "Gbadolite Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "GOM",
+    "city": "Goma",
+    "name": "Goma International Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "FKI",
+    "city": "Kisangani",
+    "name": "Bangoka International Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "KWZ",
+    "city": "Kolwezi",
+    "name": "Kolwezi Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "FBM",
+    "city": "Lubumashi",
+    "name": "Lubumbashi International Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "MJM",
+    "city": "Mbuji-mayi",
+    "name": "Mbuji Mayi Airport",
+    "country": "Congo (Kinshasa)"
+  },
+  {
+    "code": "GLF",
+    "city": "Golfito",
+    "name": "Golfito Airport",
+    "country": "Costa Rica"
+  },
+  {
+    "code": "SJO",
+    "city": "San Jose",
+    "name": "Juan Santamaria International Airport",
+    "country": "Costa Rica"
+  },
+  {
+    "code": "ABJ",
+    "city": "Abidjan",
+    "name": "Port Bouet Airport",
+    "country": "Cote d'Ivoire"
+  },
+  {
+    "code": "MJC",
+    "city": "Man",
+    "name": "Man Airport",
+    "country": "Cote d'Ivoire"
+  },
+  {
+    "code": "SPY",
+    "city": "San Pedro",
+    "name": "San Pedro Airport",
+    "country": "Cote d'Ivoire"
+  },
+  {
+    "code": "ASK",
+    "city": "Yamoussoukro",
+    "name": "Yamoussoukro Airport",
+    "country": "Cote d'Ivoire"
+  },
+  {
+    "code": "BWK",
+    "city": "Brac",
+    "name": "Bol Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "DBV",
+    "city": "Dubrovnik",
+    "name": "Dubrovnik Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "LSZ",
+    "city": "Mali Losinj",
+    "name": "Lošinj Island Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "OSI",
+    "city": "Osijek",
+    "name": "Osijek Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "PUY",
+    "city": "Pula",
+    "name": "Pula Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "RJK",
+    "city": "Rijeka",
+    "name": "Rijeka Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "SPU",
+    "city": "Split",
+    "name": "Split Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "ZAD",
+    "city": "Zadar",
+    "name": "Zadar Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "ZAG",
+    "city": "Zagreb",
+    "name": "Zagreb Airport",
+    "country": "Croatia"
+  },
+  {
+    "code": "GAO",
+    "city": "Guantanamo",
+    "name": "Mariana Grajales Airport",
+    "country": "Cuba"
+  },
+  {
+    "code": "HAV",
+    "city": "Havana",
+    "name": "José Martí International Airport",
+    "country": "Cuba"
+  },
+  {
+    "code": "PRG",
+    "city": "Prague",
+    "name": "Václav Havel Airport Prague",
+    "country": "Czech Republic"
+  },
+  {
+    "code": "CPH",
+    "city": "Copenhagen",
+    "name": "Copenhagen Kastrup Airport",
+    "country": "Denmark"
+  },
+  {
+    "code": "STI",
+    "city": "Santiago",
+    "name": "Cibao International Airport",
+    "country": "Dominican Republic"
+  },
+  {
+    "code": "SDQ",
+    "city": "Santo Domingo",
+    "name": "Las Américas International Airport",
+    "country": "Dominican Republic"
+  },
+  {
+    "code": "ATF",
+    "city": "Ambato",
+    "name": "Chachoán Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "OCC",
+    "city": "Coca",
+    "name": "Francisco De Orellana Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "CUE",
+    "city": "Cuenca",
+    "name": "Mariscal Lamar Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "GPS",
+    "city": "Galapagos",
+    "name": "Seymour Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "GYE",
+    "city": "Guayaquil",
+    "name": "José Joaquín de Olmedo International Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "LOH",
+    "city": "La Toma (Catamayo)",
+    "name": "Camilo Ponce Enriquez Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "LTX",
+    "city": "Latacunga",
+    "name": "Cotopaxi International Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "MEC",
+    "city": "Manta",
+    "name": "Eloy Alfaro International Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "UIO",
+    "city": "Quito",
+    "name": "Mariscal Sucre International Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "SCY",
+    "city": "San Cristóbal",
+    "name": "San Cristóbal Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "TNW",
+    "city": "Tena",
+    "name": "Jumandy Airport",
+    "country": "Ecuador"
+  },
+  {
+    "code": "ABS",
+    "city": "Abu Simbel",
+    "name": "Abu Simbel Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "ALY",
+    "city": "Alexandria",
+    "name": "El Nouzha Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "ASW",
+    "city": "Aswan",
+    "name": "Aswan International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "CAI",
+    "city": "Cairo",
+    "name": "Cairo International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "DBB",
+    "city": "Dabaa City",
+    "name": "El Alamein International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "HRG",
+    "city": "Hurghada",
+    "name": "Hurghada International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "LXR",
+    "city": "Luxor",
+    "name": "Luxor International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "RMF",
+    "city": "Marsa Alam",
+    "name": "Marsa Alam International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "MUH",
+    "city": "Mersa-matruh",
+    "name": "Mersa Matruh Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "SSH",
+    "city": "Sharm El Sheikh",
+    "name": "Sharm El Sheikh International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "TCP",
+    "city": "Taba",
+    "name": "Taba International Airport",
+    "country": "Egypt"
+  },
+  {
+    "code": "SAL",
+    "city": "San Salvador",
+    "name": "Monseñor Óscar Arnulfo Romero International Airport",
+    "country": "El Salvador"
+  },
+  {
+    "code": "TLL",
+    "city": "Tallinn-ulemiste International",
+    "name": "Lennart Meri Tallinn Airport",
+    "country": "Estonia"
+  },
+  {
+    "code": "ADD",
+    "city": "Addis Ababa",
+    "name": "Addis Ababa Bole International Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "AXU",
+    "city": "Axum",
+    "name": "Axum Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "BCO",
+    "city": "Baco",
+    "name": "Baco Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "DIR",
+    "city": "Dire Dawa",
+    "name": "Aba Tenna Dejazmach Yilma International Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "GDE",
+    "city": "Gode",
+    "name": "Gode Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "GDQ",
+    "city": "Gondar",
+    "name": "Gonder Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "JIJ",
+    "city": "Jijiga",
+    "name": "Wilwal International Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "JIM",
+    "city": "Jimma",
+    "name": "Jimma Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "ABK",
+    "city": "Kabri Dehar",
+    "name": "Kabri Dehar Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "LLI",
+    "city": "Lalibella",
+    "name": "Lalibella Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "MQX",
+    "city": "Makale",
+    "name": "Mekele Airport",
+    "country": "Ethiopia"
+  },
+  {
+    "code": "ENF",
+    "city": "Enontekio",
+    "name": "Enontekio Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "HEL",
+    "city": "Helsinki",
+    "name": "Helsinki Vantaa Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "IVL",
+    "city": "Ivalo",
+    "name": "Ivalo Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "JYV",
+    "city": "Jyvaskyla",
+    "name": "Jyvaskyla Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "KAJ",
+    "city": "Kajaani",
+    "name": "Kajaani Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "KEM",
+    "city": "Kemi",
+    "name": "Kemi-Tornio Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "KTT",
+    "city": "Kittila",
+    "name": "Kittilä Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "MHQ",
+    "city": "Mariehamn",
+    "name": "Mariehamn Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "OUL",
+    "city": "Oulu",
+    "name": "Oulu Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "RVN",
+    "city": "Rovaniemi",
+    "name": "Rovaniemi Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "SOT",
+    "city": "Sodankyla",
+    "name": "Sodankyla Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "TMP",
+    "city": "Tampere",
+    "name": "Tampere-Pirkkala Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "TKU",
+    "city": "Turku",
+    "name": "Turku Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "VAA",
+    "city": "Vaasa",
+    "name": "Vaasa Airport",
+    "country": "Finland"
+  },
+  {
+    "code": "AJA",
+    "city": "Ajaccio",
+    "name": "Ajaccio-Napoléon Bonaparte Airport",
+    "country": "France"
+  },
+  {
+    "code": "BOD",
+    "city": "Bordeaux",
+    "name": "Bordeaux-Mérignac Airport",
+    "country": "France"
+  },
+  {
+    "code": "BES",
+    "city": "Brest",
+    "name": "Brest Bretagne Airport",
+    "country": "France"
+  },
+  {
+    "code": "CLY",
+    "city": "Calvi",
+    "name": "Calvi-Sainte-Catherine Airport",
+    "country": "France"
+  },
+  {
+    "code": "CFE",
+    "city": "Clermont-Ferrand",
+    "name": "Clermont-Ferrand Auvergne Airport",
+    "country": "France"
+  },
+  {
+    "code": "GNB",
+    "city": "Grenoble",
+    "name": "Grenoble-Isère Airport",
+    "country": "France"
+  },
+  {
+    "code": "LIG",
+    "city": "Limoges",
+    "name": "Limoges Airport",
+    "country": "France"
+  },
+  {
+    "code": "LYS",
+    "city": "Lyon",
+    "name": "Lyon Saint-Exupéry Airport",
+    "country": "France"
+  },
+  {
+    "code": "MRS",
+    "city": "Marseille",
+    "name": "Marseille Provence Airport",
+    "country": "France"
+  },
+  {
+    "code": "ETZ",
+    "city": "Metz",
+    "name": "Metz-Nancy-Lorraine Airport",
+    "country": "France"
+  },
+  {
+    "code": "MPL",
+    "city": "Montpellier",
+    "name": "Montpellier-Méditerranée Airport",
+    "country": "France"
+  },
+  {
+    "code": "ENC",
+    "city": "Nancy",
+    "name": "Nancy-Essey Airport",
+    "country": "France"
+  },
+  {
+    "code": "NTE",
+    "city": "Nantes",
+    "name": "Nantes Atlantique Airport",
+    "country": "France"
+  },
+  {
+    "code": "NCE",
+    "city": "Nice",
+    "name": "Nice-Côte d'Azur Airport",
+    "country": "France"
+  },
+  {
+    "code": "CDG",
+    "city": "Paris",
+    "name": "Charles de Gaulle International Airport",
+    "country": "France"
+  },
+  {
+    "code": "ORY",
+    "city": "Paris",
+    "name": "Paris-Orly Airport",
+    "country": "France"
+  },
+  {
+    "code": "UIP",
+    "city": "Quimper",
+    "name": "Quimper-Cornouaille Airport",
+    "country": "France"
+  },
+  {
+    "code": "RNS",
+    "city": "Rennes",
+    "name": "Rennes-Saint-Jacques Airport",
+    "country": "France"
+  },
+  {
+    "code": "RCO",
+    "city": "Rochefort",
+    "name": "Rochefort-Saint-Agnant (BA 721) Airport",
+    "country": "France"
+  },
+  {
+    "code": "SXB",
+    "city": "Strasbourg",
+    "name": "Strasbourg Airport",
+    "country": "France"
+  },
+  {
+    "code": "TLS",
+    "city": "Toulouse",
+    "name": "Toulouse-Blagnac Airport",
+    "country": "France"
+  },
+  {
+    "code": "CAY",
+    "city": "Cayenne",
+    "name": "Cayenne-Rochambeau Airport",
+    "country": "French Guiana"
+  },
+  {
+    "code": "LBV",
+    "city": "Libreville",
+    "name": "Libreville Leon M'ba International Airport",
+    "country": "Gabon"
+  },
+  {
+    "code": "MKU",
+    "city": "Makokou",
+    "name": "Makokou Airport",
+    "country": "Gabon"
+  },
+  {
+    "code": "OKN",
+    "city": "Okondja",
+    "name": "Okondja Airport",
+    "country": "Gabon"
+  },
+  {
+    "code": "OYE",
+    "city": "Oyem",
+    "name": "Oyem Airport",
+    "country": "Gabon"
+  },
+  {
+    "code": "POG",
+    "city": "Port Gentil",
+    "name": "Port Gentil Airport",
+    "country": "Gabon"
+  },
+  {
+    "code": "TBS",
+    "city": "Tbilisi",
+    "name": "Tbilisi International Airport",
+    "country": "Georgia"
+  },
+  {
+    "code": "SXF",
+    "city": "Berlin",
+    "name": "Berlin-Schönefeld Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "TXL",
+    "city": "Berlin",
+    "name": "Berlin-Tegel Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "CGN",
+    "city": "Cologne",
+    "name": "Cologne Bonn Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "DRS",
+    "city": "Dresden",
+    "name": "Dresden Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "DUS",
+    "city": "Duesseldorf",
+    "name": "Düsseldorf Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "ERF",
+    "city": "Erfurt",
+    "name": "Erfurt Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "ESS",
+    "city": "Essen",
+    "name": "Essen Mulheim Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "FRA",
+    "city": "Frankfurt",
+    "name": "Frankfurt am Main Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "HAM",
+    "city": "Hamburg",
+    "name": "Hamburg Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "HAJ",
+    "city": "Hannover",
+    "name": "Hannover Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "HOQ",
+    "city": "Hof",
+    "name": "Hof-Plauen Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "FKB",
+    "city": "Karlsruhe/Baden-Baden",
+    "name": "Karlsruhe Baden-Baden Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "LEJ",
+    "city": "Leipzig",
+    "name": "Leipzig/Halle Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "MUC",
+    "city": "Munich",
+    "name": "Munich Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "FMO",
+    "city": "Munster",
+    "name": "Münster Osnabrück Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "NUE",
+    "city": "Nuernberg",
+    "name": "Nuremberg Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "PAD",
+    "city": "Paderborn",
+    "name": "Paderborn Lippstadt Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "SCN",
+    "city": "Saarbruecken",
+    "name": "Saarbrücken Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "STR",
+    "city": "Stuttgart",
+    "name": "Stuttgart Airport",
+    "country": "Germany"
+  },
+  {
+    "code": "ACC",
+    "city": "Accra",
+    "name": "Kotoka International Airport",
+    "country": "Ghana"
+  },
+  {
+    "code": "KMS",
+    "city": "Kumasi",
+    "name": "Kumasi Airport",
+    "country": "Ghana"
+  },
+  {
+    "code": "NYI",
+    "city": "Sunyani",
+    "name": "Sunyani Airport",
+    "country": "Ghana"
+  },
+  {
+    "code": "TKD",
+    "city": "Takoradi",
+    "name": "Takoradi Airport",
+    "country": "Ghana"
+  },
+  {
+    "code": "TML",
+    "city": "Tamale",
+    "name": "Tamale Airport",
+    "country": "Ghana"
+  },
+  {
+    "code": "ATH",
+    "city": "Athens",
+    "name": "Eleftherios Venizelos International Airport",
+    "country": "Greece"
+  },
+  {
+    "code": "GUA",
+    "city": "Guatemala City",
+    "name": "La Aurora Airport",
+    "country": "Guatemala"
+  },
+  {
+    "code": "CKY",
+    "city": "Conakry",
+    "name": "Conakry International Airport",
+    "country": "Guinea"
+  },
+  {
+    "code": "FAA",
+    "city": "Faranah",
+    "name": "Faranah Airport",
+    "country": "Guinea"
+  },
+  {
+    "code": "KSI",
+    "city": "Kissidougou",
+    "name": "Kissidougou Airport",
+    "country": "Guinea"
+  },
+  {
+    "code": "LEK",
+    "city": "Labe",
+    "name": "Tata Airport",
+    "country": "Guinea"
+  },
+  {
+    "code": "GEO",
+    "city": "Georgetown",
+    "name": "Cheddi Jagan International Airport",
+    "country": "Guyana"
+  },
+  {
+    "code": "HKG",
+    "city": "Hong Kong",
+    "name": "Hong Kong International Airport",
+    "country": "Hong Kong"
+  },
+  {
+    "code": "BUD",
+    "city": "Budapest",
+    "name": "Budapest Liszt Ferenc International Airport",
+    "country": "Hungary"
+  },
+  {
+    "code": "AGR",
+    "city": "Agra",
+    "name": "Agra Airport",
+    "country": "India"
+  },
+  {
+    "code": "AMD",
+    "city": "Ahmedabad",
+    "name": "Sardar Vallabhbhai Patel International Airport",
+    "country": "India"
+  },
+  {
+    "code": "AKD",
+    "city": "Akola",
+    "name": "Akola Airport",
+    "country": "India"
+  },
+  {
+    "code": "ATQ",
+    "city": "Amritsar",
+    "name": "Sri Guru Ram Dass Jee International Airport",
+    "country": "India"
+  },
+  {
+    "code": "IXB",
+    "city": "Baghdogra",
+    "name": "Bagdogra Airport",
+    "country": "India"
+  },
+  {
+    "code": "BLR",
+    "city": "Bangalore",
+    "name": "Kempegowda International Airport",
+    "country": "India"
+  },
+  {
+    "code": "BDQ",
+    "city": "Baroda",
+    "name": "Vadodara Airport",
+    "country": "India"
+  },
+  {
+    "code": "BHO",
+    "city": "Bhopal",
+    "name": "Raja Bhoj International Airport",
+    "country": "India"
+  },
+  {
+    "code": "BBI",
+    "city": "Bhubaneswar",
+    "name": "Biju Patnaik Airport",
+    "country": "India"
+  },
+  {
+    "code": "IXC",
+    "city": "Chandigarh",
+    "name": "Chandigarh Airport",
+    "country": "India"
+  },
+  {
+    "code": "CJB",
+    "city": "Coimbatore",
+    "name": "Coimbatore International Airport",
+    "country": "India"
+  },
+  {
+    "code": "DEL",
+    "city": "Delhi",
+    "name": "Indira Gandhi International Airport",
+    "country": "India"
+  },
+  {
+    "code": "GOP",
+    "city": "Gorakhpur",
+    "name": "Gorakhpur Airport",
+    "country": "India"
+  },
+  {
+    "code": "GUX",
+    "city": "Guna",
+    "name": "Guna Airport",
+    "country": "India"
+  },
+  {
+    "code": "GAU",
+    "city": "Guwahati",
+    "name": "Lokpriya Gopinath Bordoloi International Airport",
+    "country": "India"
+  },
+  {
+    "code": "HYD",
+    "city": "Hyderabad",
+    "name": "Rajiv Gandhi International Airport",
+    "country": "India"
+  },
+  {
+    "code": "IDR",
+    "city": "Indore",
+    "name": "Devi Ahilyabai Holkar Airport",
+    "country": "India"
+  },
+  {
+    "code": "JLR",
+    "city": "Jabalpur",
+    "name": "Jabalpur Airport",
+    "country": "India"
+  },
+  {
+    "code": "IXJ",
+    "city": "Jammu",
+    "name": "Jammu Airport",
+    "country": "India"
+  },
+  {
+    "code": "COK",
+    "city": "Kochi",
+    "name": "Cochin International Airport",
+    "country": "India"
+  },
+  {
+    "code": "CCU",
+    "city": "Kolkata",
+    "name": "Netaji Subhash Chandra Bose International Airport",
+    "country": "India"
+  },
+  {
+    "code": "LKO",
+    "city": "Lucknow",
+    "name": "Chaudhary Charan Singh International Airport",
+    "country": "India"
+  },
+  {
+    "code": "MAA",
+    "city": "Madras",
+    "name": "Chennai International Airport",
+    "country": "India"
+  },
+  {
+    "code": "IXM",
+    "city": "Madurai",
+    "name": "Madurai Airport",
+    "country": "India"
+  },
+  {
+    "code": "IXE",
+    "city": "Mangalore",
+    "name": "Mangalore International Airport",
+    "country": "India"
+  },
+  {
+    "code": "MZU",
+    "city": "Mazuffarpur",
+    "name": "Muzaffarpur Airport",
+    "country": "India"
+  },
+  {
+    "code": "DIB",
+    "city": "Mohanbari",
+    "name": "Dibrugarh Airport",
+    "country": "India"
+  },
+  {
+    "code": "BOM",
+    "city": "Mumbai",
+    "name": "Chhatrapati Shivaji International Airport",
+    "country": "India"
+  },
+  {
+    "code": "NAG",
+    "city": "Nagpur",
+    "name": "Dr. Babasaheb Ambedkar International Airport",
+    "country": "India"
+  },
+  {
+    "code": "NDC",
+    "city": "Nanded",
+    "name": "Nanded Airport",
+    "country": "India"
+  },
+  {
+    "code": "RAJ",
+    "city": "Rajkot",
+    "name": "Rajkot Airport",
+    "country": "India"
+  },
+  {
+    "code": "SHL",
+    "city": "Shillong",
+    "name": "Shillong Airport",
+    "country": "India"
+  },
+  {
+    "code": "SXR",
+    "city": "Srinagar",
+    "name": "Sheikh ul Alam Airport",
+    "country": "India"
+  },
+  {
+    "code": "TEZ",
+    "city": "Tezpur",
+    "name": "Tezpur Airport",
+    "country": "India"
+  },
+  {
+    "code": "TRZ",
+    "city": "Tiruchirappalli",
+    "name": "Tiruchirapally Civil Airport Airport",
+    "country": "India"
+  },
+  {
+    "code": "VNS",
+    "city": "Varanasi",
+    "name": "Lal Bahadur Shastri Airport",
+    "country": "India"
+  },
+  {
+    "code": "VGA",
+    "city": "Vijayawada",
+    "name": "Vijayawada Airport",
+    "country": "India"
+  },
+  {
+    "code": "BPN",
+    "city": "Balikpapan",
+    "name": "Sultan Aji Muhamad Sulaiman Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "TKG",
+    "city": "Bandar Lampung-Sumatra Island",
+    "name": "Radin Inten II (Branti) Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "BDJ",
+    "city": "Banjarmasin",
+    "name": "Syamsudin Noor Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "BTH",
+    "city": "Batam",
+    "name": "Hang Nadim International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "DPS",
+    "city": "Denpasar",
+    "name": "Ngurah Rai (Bali) International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "GNS",
+    "city": "Gunung Sitoli",
+    "name": "Binaka Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "CGK",
+    "city": "Jakarta",
+    "name": "Soekarno-Hatta International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "LBJ",
+    "city": "Labuhan Bajo",
+    "name": "Komodo Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "MLG",
+    "city": "Malang",
+    "name": "Abdul Rachman Saleh Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "MOF",
+    "city": "Maumere",
+    "name": "Maumere(Wai Oti) Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "MES",
+    "city": "Medan",
+    "name": "Soewondo Air Force Base",
+    "country": "Indonesia"
+  },
+  {
+    "code": "KNO",
+    "city": "Medan",
+    "name": "Kualanamu International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "PDG",
+    "city": "Padang",
+    "name": "Minangkabau International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "PKY",
+    "city": "Palangkaraya",
+    "name": "Tjilik Riwut Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "PLM",
+    "city": "Palembang",
+    "name": "Sultan Mahmud Badaruddin II Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "PNK",
+    "city": "Pontianak",
+    "name": "Supadio Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "SRG",
+    "city": "Semarang",
+    "name": "Achmad Yani Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "SIQ",
+    "city": "Singkep",
+    "name": "Dabo Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "SOC",
+    "city": "Solo City",
+    "name": "Adi Sumarmo Wiryokusumo Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "SUB",
+    "city": "Surabaya",
+    "name": "Juanda International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "UPG",
+    "city": "Ujung Pandang",
+    "name": "Hasanuddin International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "JOG",
+    "city": "Yogyakarta",
+    "name": "Adi Sutjipto International Airport",
+    "country": "Indonesia"
+  },
+  {
+    "code": "NOC",
+    "city": "Connaught",
+    "name": "Ireland West Knock Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "ORK",
+    "city": "Cork",
+    "name": "Cork Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "CFN",
+    "city": "Dongloe",
+    "name": "Donegal Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "DUB",
+    "city": "Dublin",
+    "name": "Dublin Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "KIR",
+    "city": "Kerry",
+    "name": "Kerry Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "SNN",
+    "city": "Shannon",
+    "name": "Shannon Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "WAT",
+    "city": "Waterford",
+    "name": "Waterford Airport",
+    "country": "Ireland"
+  },
+  {
+    "code": "AHO",
+    "city": "Alghero",
+    "name": "Alghero-Fertilia Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "BRI",
+    "city": "Bari",
+    "name": "Bari Karol Wojtyła Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "BLQ",
+    "city": "Bologna",
+    "name": "Bologna Guglielmo Marconi Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "CAG",
+    "city": "Cagliari",
+    "name": "Cagliari Elmas Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "CTA",
+    "city": "Catania",
+    "name": "Catania-Fontanarossa Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "FLR",
+    "city": "Florence",
+    "name": "Peretola Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "GOA",
+    "city": "Genoa",
+    "name": "Genoa Cristoforo Colombo Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "LIN",
+    "city": "Milan",
+    "name": "Milano Linate Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "MXP",
+    "city": "Milano",
+    "name": "Malpensa International Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "NAP",
+    "city": "Naples",
+    "name": "Naples International Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "OLB",
+    "city": "Olbia",
+    "name": "Olbia Costa Smeralda Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "PMO",
+    "city": "Palermo",
+    "name": "Falcone–Borsellino Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "PMF",
+    "city": "Parma",
+    "name": "Parma Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "PSA",
+    "city": "Pisa",
+    "name": "Pisa International Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "REG",
+    "city": "Reggio Calabria",
+    "name": "Reggio Calabria Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "CIA",
+    "city": "Rome",
+    "name": "Ciampino–G. B. Pastine International Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "FCO",
+    "city": "Rome",
+    "name": "Leonardo da Vinci–Fiumicino Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "TRN",
+    "city": "Torino",
+    "name": "Turin Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "TSF",
+    "city": "Treviso",
+    "name": "Treviso-Sant'Angelo Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "VCE",
+    "city": "Venice",
+    "name": "Venice Marco Polo Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "VRN",
+    "city": "Villafranca",
+    "name": "Verona Villafranca Airport",
+    "country": "Italy"
+  },
+  {
+    "code": "KIN",
+    "city": "Kingston",
+    "name": "Norman Manley International Airport",
+    "country": "Jamaica"
+  },
+  {
+    "code": "MBJ",
+    "city": "Montego Bay",
+    "name": "Sangster International Airport",
+    "country": "Jamaica"
+  },
+  {
+    "code": "AOJ",
+    "city": "Aomori",
+    "name": "Aomori Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "AKJ",
+    "city": "Asahikawa",
+    "name": "Asahikawa Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "FUK",
+    "city": "Fukuoka",
+    "name": "Fukuoka Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "HNA",
+    "city": "Hanamaki",
+    "name": "Hanamaki Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "HIJ",
+    "city": "Hiroshima",
+    "name": "Hiroshima Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "KOJ",
+    "city": "Kagoshima",
+    "name": "Kagoshima Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "KMQ",
+    "city": "Kanazawa",
+    "name": "Komatsu Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "MYJ",
+    "city": "Matsuyama",
+    "name": "Matsuyama Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "MMB",
+    "city": "Memanbetsu",
+    "name": "Memanbetsu Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "MUS",
+    "city": "Minami Tori Shima",
+    "name": "Minami Torishima Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "KMI",
+    "city": "Miyazaki",
+    "name": "Miyazaki Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "NGS",
+    "city": "Nagasaki",
+    "name": "Nagasaki Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "NGO",
+    "city": "Nagoya",
+    "name": "Chubu Centrair International Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "OBO",
+    "city": "Obihiro",
+    "name": "Tokachi-Obihiro Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "OIT",
+    "city": "Oita",
+    "name": "Oita Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "OKA",
+    "city": "Okinawa",
+    "name": "Naha Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "KIX",
+    "city": "Osaka",
+    "name": "Kansai International Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "CTS",
+    "city": "Sapporo",
+    "name": "New Chitose Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "SDJ",
+    "city": "Sendai",
+    "name": "Sendai Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "NRT",
+    "city": "Tokyo",
+    "name": "Narita International Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "HND",
+    "city": "Tokyo",
+    "name": "Tokyo Haneda International Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "TOY",
+    "city": "Toyama",
+    "name": "Toyama Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "WKJ",
+    "city": "Wakkanai",
+    "name": "Wakkanai Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "GAJ",
+    "city": "Yamagata",
+    "name": "Yamagata Airport",
+    "country": "Japan"
+  },
+  {
+    "code": "ALA",
+    "city": "Alma-ata",
+    "name": "Almaty Airport",
+    "country": "Kazakhstan"
+  },
+  {
+    "code": "TSE",
+    "city": "Tselinograd",
+    "name": "Astana International Airport",
+    "country": "Kazakhstan"
+  },
+  {
+    "code": "EDL",
+    "city": "Eldoret",
+    "name": "Eldoret International Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "HOA",
+    "city": "Hola",
+    "name": "Hola Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "GGM",
+    "city": "Kakamega",
+    "name": "Kakamega Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "KIS",
+    "city": "Kisumu",
+    "name": "Kisumu Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "LAU",
+    "city": "Lamu",
+    "name": "Manda Airstrip",
+    "country": "Kenya"
+  },
+  {
+    "code": "LOK",
+    "city": "Lodwar",
+    "name": "Lodwar Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "MYD",
+    "city": "Malindi",
+    "name": "Malindi Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "MRE",
+    "city": "Masai Mara",
+    "name": "Mara Serena Lodge Airstrip",
+    "country": "Kenya"
+  },
+  {
+    "code": "JJM",
+    "city": "Meru National Park",
+    "name": "Mulika Lodge Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "MBA",
+    "city": "Mombasa",
+    "name": "Mombasa Moi International Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "WIL",
+    "city": "Nairobi",
+    "name": "Nairobi Wilson Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "NBO",
+    "city": "Nairobi",
+    "name": "Jomo Kenyatta International Airport",
+    "country": "Kenya"
+  },
+  {
+    "code": "KWI",
+    "city": "Kuwait",
+    "name": "Kuwait International Airport",
+    "country": "Kuwait"
+  },
+  {
+    "code": "HOE",
+    "city": "Huay Xai",
+    "name": "Ban Huoeisay Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "LPQ",
+    "city": "Luang Prabang",
+    "name": "Luang Phabang International Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "ODY",
+    "city": "Muang Xay",
+    "name": "Oudomsay Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "PKZ",
+    "city": "Pakse",
+    "name": "Pakse International Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "XKH",
+    "city": "Phon Savan",
+    "name": "Xieng Khouang Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "PCQ",
+    "city": "Phongsaly",
+    "name": "Boun Neau Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "NEU",
+    "city": "Sam Neua",
+    "name": "Sam Neua Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "ZVK",
+    "city": "Savannakhet",
+    "name": "Savannakhet Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "VTE",
+    "city": "Vientiane",
+    "name": "Wattay International Airport",
+    "country": "Laos"
+  },
+  {
+    "code": "RIX",
+    "city": "Riga",
+    "name": "Riga International Airport",
+    "country": "Latvia"
+  },
+  {
+    "code": "KUN",
+    "city": "Kaunas",
+    "name": "Kaunas International Airport",
+    "country": "Lithuania"
+  },
+  {
+    "code": "PLQ",
+    "city": "Palanga",
+    "name": "Palanga International Airport",
+    "country": "Lithuania"
+  },
+  {
+    "code": "VNO",
+    "city": "Vilnius",
+    "name": "Vilnius International Airport",
+    "country": "Lithuania"
+  },
+  {
+    "code": "SKP",
+    "city": "Skopje",
+    "name": "Skopje Alexander the Great Airport",
+    "country": "Macedonia"
+  },
+  {
+    "code": "SVB",
+    "city": "Sambava",
+    "name": "Sambava Airport",
+    "country": "Madagascar"
+  },
+  {
+    "code": "BTU",
+    "city": "Bintulu",
+    "name": "Bintulu Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "BKI",
+    "city": "Kota Kinabalu",
+    "name": "Kota Kinabalu International Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "KUL",
+    "city": "Kuala Lumpur",
+    "name": "Kuala Lumpur International Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "KCH",
+    "city": "Kuching",
+    "name": "Kuching International Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "LBU",
+    "city": "Labuan",
+    "name": "Labuan Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "LGK",
+    "city": "Langkawi",
+    "name": "Langkawi International Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "ODN",
+    "city": "Long Seridan",
+    "name": "Long Seridan Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "MUR",
+    "city": "Marudi",
+    "name": "Marudi Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "MYY",
+    "city": "Miri",
+    "name": "Miri Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "SDK",
+    "city": "Sandakan",
+    "name": "Sandakan Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "SBW",
+    "city": "Sibu",
+    "name": "Sibu Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "TWU",
+    "city": "Tawau",
+    "name": "Tawau Airport",
+    "country": "Malaysia"
+  },
+  {
+    "code": "MLE",
+    "city": "Male",
+    "name": "Malé International Airport",
+    "country": "Maldives"
+  },
+  {
+    "code": "BKO",
+    "city": "Bamako",
+    "name": "Modibo Keita International Airport",
+    "country": "Mali"
+  },
+  {
+    "code": "ATR",
+    "city": "Atar",
+    "name": "Atar International Airport",
+    "country": "Mauritania"
+  },
+  {
+    "code": "NDB",
+    "city": "Nouadhibou",
+    "name": "Nouadhibou International Airport",
+    "country": "Mauritania"
+  },
+  {
+    "code": "NKC",
+    "city": "Nouakschott",
+    "name": "Nouakchott–Oumtounsy International Airport",
+    "country": "Mauritania"
+  },
+  {
+    "code": "TIY",
+    "city": "Tidjikja",
+    "name": "Tidjikja Airport",
+    "country": "Mauritania"
+  },
+  {
+    "code": "OUZ",
+    "city": "Zouerat",
+    "name": "Tazadit Airport",
+    "country": "Mauritania"
+  },
+  {
+    "code": "CUN",
+    "city": "Cancun",
+    "name": "Cancún International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "CUU",
+    "city": "Chihuahua",
+    "name": "General Roberto Fierro Villalobos International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "CJS",
+    "city": "Ciudad Juarez",
+    "name": "Abraham González International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "CUL",
+    "city": "Culiacan",
+    "name": "Bachigualato Federal International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "BJX",
+    "city": "Del Bajio",
+    "name": "Del Bajío International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "DGO",
+    "city": "Durango",
+    "name": "General Guadalupe Victoria International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "GDL",
+    "city": "Guadalajara",
+    "name": "Don Miguel Hidalgo Y Costilla International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "HMO",
+    "city": "Hermosillo",
+    "name": "General Ignacio P. Garcia International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "LAP",
+    "city": "La Paz",
+    "name": "Manuel Márquez de León International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "ZLO",
+    "city": "Manzanillo",
+    "name": "Playa De Oro International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "MZT",
+    "city": "Mazatlan",
+    "name": "General Rafael Buelna International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "MID",
+    "city": "Merida",
+    "name": "Licenciado Manuel Crescencio Rejon Int Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "MEX",
+    "city": "Mexico City",
+    "name": "Licenciado Benito Juarez International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "MTY",
+    "city": "Monterrey",
+    "name": "General Mariano Escobedo International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "OAX",
+    "city": "Oaxaca",
+    "name": "Xoxocotlán International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "PVR",
+    "city": "Puerto Vallarta",
+    "name": "Licenciado Gustavo Díaz Ordaz International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "SJD",
+    "city": "San Jose Del Cabo",
+    "name": "Los Cabos International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "SLP",
+    "city": "San Luis Potosi",
+    "name": "Ponciano Arriaga International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "TAM",
+    "city": "Tampico",
+    "name": "General Francisco Javier Mina International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "TIJ",
+    "city": "Tijuana",
+    "name": "General Abelardo L. Rodríguez International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "TGZ",
+    "city": "Tuxtla Gutierrez",
+    "name": "Angel Albino Corzo International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "VER",
+    "city": "Vera Cruz",
+    "name": "General Heriberto Jara International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "ZIH",
+    "city": "Zihuatanejo",
+    "name": "Ixtapa Zihuatanejo International Airport",
+    "country": "Mexico"
+  },
+  {
+    "code": "KIV",
+    "city": "Chisinau",
+    "name": "Chişinău International Airport",
+    "country": "Moldova"
+  },
+  {
+    "code": "MXV",
+    "city": "Muren",
+    "name": "Mörön Airport",
+    "country": "Mongolia"
+  },
+  {
+    "code": "TGD",
+    "city": "Podgorica",
+    "name": "Podgorica Airport",
+    "country": "Montenegro"
+  },
+  {
+    "code": "BWA",
+    "city": "Bhairawa",
+    "name": "Gautam Buddha Airport",
+    "country": "Nepal"
+  },
+  {
+    "code": "KTM",
+    "city": "Kathmandu",
+    "name": "Tribhuvan International Airport",
+    "country": "Nepal"
+  },
+  {
+    "code": "PKR",
+    "city": "Pokhara",
+    "name": "Pokhara Airport",
+    "country": "Nepal"
+  },
+  {
+    "code": "AMS",
+    "city": "Amsterdam",
+    "name": "Amsterdam Airport Schiphol",
+    "country": "Netherlands"
+  },
+  {
+    "code": "BON",
+    "city": "Kralendijk",
+    "name": "Flamingo International Airport",
+    "country": "Netherlands Antilles"
+  },
+  {
+    "code": "SXM",
+    "city": "Philipsburg",
+    "name": "Princess Juliana International Airport",
+    "country": "Netherlands Antilles"
+  },
+  {
+    "code": "CUR",
+    "city": "Willemstad",
+    "name": "Hato International Airport",
+    "country": "Netherlands Antilles"
+  },
+  {
+    "code": "MON",
+    "city": "Mount Cook",
+    "name": "Mount Cook Airport",
+    "country": "New Zealand"
+  },
+  {
+    "code": "MGA",
+    "city": "Managua",
+    "name": "Augusto C. Sandino (Managua) International Airport",
+    "country": "Nicaragua"
+  },
+  {
+    "code": "AJY",
+    "city": "Agadez",
+    "name": "Mano Dayak International Airport",
+    "country": "Niger"
+  },
+  {
+    "code": "MFQ",
+    "city": "Maradi",
+    "name": "Maradi Airport",
+    "country": "Niger"
+  },
+  {
+    "code": "NIM",
+    "city": "Niamey",
+    "name": "Diori Hamani International Airport",
+    "country": "Niger"
+  },
+  {
+    "code": "ZND",
+    "city": "Zinder",
+    "name": "Zinder Airport",
+    "country": "Niger"
+  },
+  {
+    "code": "ABV",
+    "city": "Abuja",
+    "name": "Nnamdi Azikiwe International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "BCU",
+    "city": "Bauchi",
+    "name": "Sir Abubakar Tafawa Balewa International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "BNI",
+    "city": "Benin",
+    "name": "Benin Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "CBQ",
+    "city": "Calabar",
+    "name": "Margaret Ekpo International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "GMO",
+    "city": "Gombe",
+    "name": "Gombe Lawanti International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "IBA",
+    "city": "Ibadan",
+    "name": "Ibadan Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "JOS",
+    "city": "Jos",
+    "name": "Yakubu Gowon Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "KAN",
+    "city": "Kano",
+    "name": "Mallam Aminu International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "LOS",
+    "city": "Lagos",
+    "name": "Murtala Muhammed International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "MIU",
+    "city": "Maiduguri",
+    "name": "Maiduguri International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "MDI",
+    "city": "Makurdi",
+    "name": "Makurdi Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "QRW",
+    "city": "Osubi",
+    "name": "Warri Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "PHC",
+    "city": "Port Hartcourt",
+    "name": "Port Harcourt International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "SKO",
+    "city": "Sokoto",
+    "name": "Sadiq Abubakar III International Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "YOL",
+    "city": "Yola",
+    "name": "Yola Airport",
+    "country": "Nigeria"
+  },
+  {
+    "code": "BGO",
+    "city": "Bergen",
+    "name": "Bergen Airport Flesland",
+    "country": "Norway"
+  },
+  {
+    "code": "OSL",
+    "city": "Oslo",
+    "name": "Oslo Lufthavn",
+    "country": "Norway"
+  },
+  {
+    "code": "MCT",
+    "city": "Muscat",
+    "name": "Muscat International Airport",
+    "country": "Oman"
+  },
+  {
+    "code": "PTY",
+    "city": "Panama City",
+    "name": "Tocumen International Airport",
+    "country": "Panama"
+  },
+  {
+    "code": "ASU",
+    "city": "Asuncion",
+    "name": "Silvio Pettirossi International Airport",
+    "country": "Paraguay"
+  },
+  {
+    "code": "AGT",
+    "city": "Ciudad del Este",
+    "name": "Guarani International Airport",
+    "country": "Paraguay"
+  },
+  {
+    "code": "CIO",
+    "city": "Conception",
+    "name": "Teniente Col Carmelo Peralta Airport",
+    "country": "Paraguay"
+  },
+  {
+    "code": "AQP",
+    "city": "Arequipa",
+    "name": "Rodríguez Ballón International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "AYP",
+    "city": "Ayacucho",
+    "name": "Coronel FAP Alfredo Mendivil Duarte Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "CIX",
+    "city": "Chiclayo",
+    "name": "Capitan FAP Jose A Quinones Gonzales International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "CUZ",
+    "city": "Cuzco",
+    "name": "Alejandro Velasco Astete International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "HUU",
+    "city": "Huánuco",
+    "name": "Alferez Fap David Figueroa Fernandini Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "IQT",
+    "city": "Iquitos",
+    "name": "Coronel FAP Francisco Secada Vignetta International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "JUL",
+    "city": "Juliaca",
+    "name": "Inca Manco Capac International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "LIM",
+    "city": "Lima",
+    "name": "Jorge Chávez International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "PIU",
+    "city": "Piura",
+    "name": "Capitán FAP Guillermo Concha Iberico International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "PCL",
+    "city": "Pucallpa",
+    "name": "Cap FAP David Abenzur Rengifo International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "TRU",
+    "city": "Trujillo",
+    "name": "Capitan FAP Carlos Martinez De Pinillos International Airport",
+    "country": "Peru"
+  },
+  {
+    "code": "BCD",
+    "city": "Bacolod",
+    "name": "Bacolod-Silay Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "MPH",
+    "city": "Caticlan",
+    "name": "Godofredo P. Ramos Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "CEB",
+    "city": "Cebu",
+    "name": "Mactan Cebu International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "DVO",
+    "city": "Davao",
+    "name": "Francisco Bangoy International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "ILO",
+    "city": "Iloilo",
+    "name": "Iloilo International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "MNL",
+    "city": "Manila",
+    "name": "Ninoy Aquino International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "SFS",
+    "city": "Olongapo City",
+    "name": "Subic Bay International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "OZC",
+    "city": "Ozamis",
+    "name": "Labo Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "GES",
+    "city": "Romblon",
+    "name": "General Santos International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "RXS",
+    "city": "Roxas City",
+    "name": "Roxas Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "TAG",
+    "city": "Tagbilaran",
+    "name": "Tagbilaran Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "ZAM",
+    "city": "Zamboanga",
+    "name": "Zamboanga International Airport",
+    "country": "Philippines"
+  },
+  {
+    "code": "WAW",
+    "city": "Warsaw",
+    "name": "Warsaw Chopin Airport",
+    "country": "Poland"
+  },
+  {
+    "code": "FAO",
+    "city": "Faro",
+    "name": "Faro Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "FNC",
+    "city": "Funchal",
+    "name": "Madeira Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "HOR",
+    "city": "Horta",
+    "name": "Horta Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "TER",
+    "city": "Lajes (terceira Island)",
+    "name": "Lajes Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "LIS",
+    "city": "Lisbon",
+    "name": "Humberto Delgado Airport (Lisbon Portela Airport)",
+    "country": "Portugal"
+  },
+  {
+    "code": "PDL",
+    "city": "Ponta Delgada",
+    "name": "João Paulo II Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "OPO",
+    "city": "Porto",
+    "name": "Francisco de Sá Carneiro Airport",
+    "country": "Portugal"
+  },
+  {
+    "code": "SJU",
+    "city": "San Juan",
+    "name": "Luis Munoz Marin International Airport",
+    "country": "Puerto Rico"
+  },
+  {
+    "code": "DOH",
+    "city": "Doha",
+    "name": "Hamad International Airport",
+    "country": "Qatar"
+  },
+  {
+    "code": "DMM",
+    "city": "Dammam",
+    "name": "King Fahd International Airport",
+    "country": "Saudi Arabia"
+  },
+  {
+    "code": "JED",
+    "city": "Jeddah",
+    "name": "King Abdulaziz International Airport",
+    "country": "Saudi Arabia"
+  },
+  {
+    "code": "MED",
+    "city": "Madinah",
+    "name": "Prince Mohammad Bin Abdulaziz Airport",
+    "country": "Saudi Arabia"
+  },
+  {
+    "code": "RUH",
+    "city": "Riyadh",
+    "name": "King Khaled International Airport",
+    "country": "Saudi Arabia"
+  },
+  {
+    "code": "CSK",
+    "city": "Cap Skiring",
+    "name": "Cap Skirring Airport",
+    "country": "Senegal"
+  },
+  {
+    "code": "DKR",
+    "city": "Dakar",
+    "name": "Léopold Sédar Senghor International Airport",
+    "country": "Senegal"
+  },
+  {
+    "code": "KDA",
+    "city": "Kolda",
+    "name": "Kolda North Airport",
+    "country": "Senegal"
+  },
+  {
+    "code": "XLS",
+    "city": "St. Louis",
+    "name": "Saint Louis Airport",
+    "country": "Senegal"
+  },
+  {
+    "code": "ZIG",
+    "city": "Ziguinchor",
+    "name": "Ziguinchor Airport",
+    "country": "Senegal"
+  },
+  {
+    "code": "SIN",
+    "city": "Singapore",
+    "name": "Singapore Changi Airport",
+    "country": "Singapore"
+  },
+  {
+    "code": "SCZ",
+    "city": "Santa Cruz/Graciosa Bay/Luova",
+    "name": "Santa Cruz/Graciosa Bay/Luova Airport",
+    "country": "Solomon Islands"
+  },
+  {
+    "code": "BFN",
+    "city": "Bloemfontein",
+    "name": "Bram Fischer International Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "CPT",
+    "city": "Cape Town",
+    "name": "Cape Town International Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "DUR",
+    "city": "Durban",
+    "name": "King Shaka International Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "ELS",
+    "city": "East London",
+    "name": "Ben Schoeman Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "GRJ",
+    "city": "George",
+    "name": "George Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "JNB",
+    "city": "Johannesburg",
+    "name": "OR Tambo International Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "HLA",
+    "city": "Johannesburg",
+    "name": "Lanseria Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "MQP",
+    "city": "Mpumalanga",
+    "name": "Kruger Mpumalanga International Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "PZL",
+    "city": "Phinda",
+    "name": "Zulu Inyala Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "PLZ",
+    "city": "Port Elizabeth",
+    "name": "Port Elizabeth Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "UTN",
+    "city": "Upington",
+    "name": "Pierre Van Ryneveld Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "VRU",
+    "city": "Vryburg",
+    "name": "Vryburg Airport",
+    "country": "South Africa"
+  },
+  {
+    "code": "PUS",
+    "city": "Busan",
+    "name": "Gimhae International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "CJU",
+    "city": "Cheju",
+    "name": "Jeju International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "CJJ",
+    "city": "Chongju",
+    "name": "Cheongju International Airport/Cheongju Air Base (K-59/G-513)",
+    "country": "South Korea"
+  },
+  {
+    "code": "KWJ",
+    "city": "Kwangju",
+    "name": "Gwangju Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "MWX",
+    "city": "Muan",
+    "name": "Muan International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "KPO",
+    "city": "Pohang",
+    "name": "Pohang Airport (G-815/K-3)",
+    "country": "South Korea"
+  },
+  {
+    "code": "HIN",
+    "city": "Sacheon",
+    "name": "Sacheon Air Base/Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "GMP",
+    "city": "Seoul",
+    "name": "Gimpo International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "ICN",
+    "city": "Seoul",
+    "name": "Incheon International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "YNY",
+    "city": "Sokcho / Gangneung",
+    "name": "Yangyang International Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "TAE",
+    "city": "Taegu",
+    "name": "Daegu Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "USN",
+    "city": "Ulsan",
+    "name": "Ulsan Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "RSU",
+    "city": "Yeosu",
+    "name": "Yeosu Airport",
+    "country": "South Korea"
+  },
+  {
+    "code": "ACE",
+    "city": "Arrecife",
+    "name": "Lanzarote Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "OVD",
+    "city": "Aviles",
+    "name": "Asturias Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "BCN",
+    "city": "Barcelona",
+    "name": "Barcelona International Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "BIO",
+    "city": "Bilbao",
+    "name": "Bilbao Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "GRO",
+    "city": "Gerona",
+    "name": "Girona Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "LPA",
+    "city": "Gran Canaria",
+    "name": "Gran Canaria Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "IBZ",
+    "city": "Ibiza",
+    "name": "Ibiza Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "MAD",
+    "city": "Madrid",
+    "name": "Adolfo Suárez Madrid–Barajas Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "AGP",
+    "city": "Malaga",
+    "name": "Málaga Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "PMI",
+    "city": "Palma de Mallorca",
+    "name": "Palma De Mallorca Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "SVQ",
+    "city": "Sevilla",
+    "name": "Sevilla Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "TFS",
+    "city": "Tenerife",
+    "name": "Tenerife South Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "TFN",
+    "city": "Tenerife",
+    "name": "Tenerife Norte Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "VLC",
+    "city": "Valencia",
+    "name": "Valencia Airport",
+    "country": "Spain"
+  },
+  {
+    "code": "BTC",
+    "city": "Batticaloa",
+    "name": "Batticaloa Airport",
+    "country": "Sri Lanka"
+  },
+  {
+    "code": "CMB",
+    "city": "Colombo",
+    "name": "Bandaranaike International Colombo Airport",
+    "country": "Sri Lanka"
+  },
+  {
+    "code": "HRI",
+    "city": "Mattala",
+    "name": "Mattala Rajapaksa International Airport",
+    "country": "Sri Lanka"
+  },
+  {
+    "code": "PBM",
+    "city": "Zandery",
+    "name": "Johan Adolf Pengel International Airport",
+    "country": "Suriname"
+  },
+  {
+    "code": "ARN",
+    "city": "Stockholm",
+    "name": "Stockholm-Arlanda Airport",
+    "country": "Sweden"
+  },
+  {
+    "code": "CYI",
+    "city": "Chiayi",
+    "name": "Chiayi Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "TTT",
+    "city": "Fengnin",
+    "name": "Taitung Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "GNI",
+    "city": "Green Island",
+    "name": "Lyudao Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "HUN",
+    "city": "Hualien",
+    "name": "Hualien Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "KHH",
+    "city": "Kaohsiung",
+    "name": "Kaohsiung International Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "KNH",
+    "city": "Kinmen",
+    "name": "Kinmen Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "LZN",
+    "city": "Matsu Islands",
+    "name": "Matsu Nangan Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "MFK",
+    "city": "Matsu Islands",
+    "name": "Matsu Beigan Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "RMQ",
+    "city": "Taichung",
+    "name": "Taichung Ching Chuang Kang Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "TNN",
+    "city": "Tainan",
+    "name": "Tainan Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "TSA",
+    "city": "Taipei",
+    "name": "Taipei Songshan Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "TPE",
+    "city": "Taipei",
+    "name": "Taiwan Taoyuan International Airport",
+    "country": "Taiwan"
+  },
+  {
+    "code": "ARK",
+    "city": "Arusha",
+    "name": "Arusha Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "DAR",
+    "city": "Dar Es Salaam",
+    "name": "Julius Nyerere International Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "DOD",
+    "city": "Dodoma",
+    "name": "Dodoma Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "JRO",
+    "city": "Kilimanjaro",
+    "name": "Kilimanjaro International Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "KIY",
+    "city": "Kilwa Masoko",
+    "name": "Kilwa Masoko Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "LDI",
+    "city": "Lindi",
+    "name": "Lindi Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "MYW",
+    "city": "Mtwara",
+    "name": "Mtwara Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "MWZ",
+    "city": "Mwanza",
+    "name": "Mwanza Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "SHY",
+    "city": "Shinyanga",
+    "name": "Shinyanga Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "TBO",
+    "city": "Tabora",
+    "name": "Tabora Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "TGT",
+    "city": "Tanga",
+    "name": "Tanga Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "ZNZ",
+    "city": "Zanzibar",
+    "name": "Abeid Amani Karume International Airport",
+    "country": "Tanzania"
+  },
+  {
+    "code": "DMK",
+    "city": "Bangkok",
+    "name": "Don Mueang International Airport",
+    "country": "Thailand"
+  },
+  {
+    "code": "BKK",
+    "city": "Bangkok",
+    "name": "Suvarnabhumi Airport",
+    "country": "Thailand"
+  },
+  {
+    "code": "LFW",
+    "city": "Lome",
+    "name": "Lomé-Tokoin Airport",
+    "country": "Togo"
+  },
+  {
+    "code": "POS",
+    "city": "Port-of-spain",
+    "name": "Piarco International Airport",
+    "country": "Trinidad and Tobago"
+  },
+  {
+    "code": "MQM",
+    "city": "Mardin",
+    "name": "Mardin Airport",
+    "country": "Turkey"
+  },
+  {
+    "code": "RUA",
+    "city": "Arua",
+    "name": "Arua Airport",
+    "country": "Uganda"
+  },
+  {
+    "code": "EBB",
+    "city": "Entebbe",
+    "name": "Entebbe International Airport",
+    "country": "Uganda"
+  },
+  {
+    "code": "ULU",
+    "city": "Gulu",
+    "name": "Gulu Airport",
+    "country": "Uganda"
+  },
+  {
+    "code": "SRT",
+    "city": "Soroti",
+    "name": "Soroti Airport",
+    "country": "Uganda"
+  },
+  {
+    "code": "CWC",
+    "city": "Chernovtsk",
+    "name": "Chernivtsi International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "DNK",
+    "city": "Dnepropetrovsk",
+    "name": "Dnipropetrovsk International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "HRK",
+    "city": "Kharkov",
+    "name": "Kharkiv International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "KHE",
+    "city": "Kherson",
+    "name": "Kherson International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "KBP",
+    "city": "Kiev",
+    "name": "Boryspil International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "IEV",
+    "city": "Kiev",
+    "name": "Kiev Zhuliany International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "KRQ",
+    "city": "Kramatorsk",
+    "name": "Kramatorsk Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "LWO",
+    "city": "Lvov",
+    "name": "Lviv International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "NLV",
+    "city": "Nikolayev",
+    "name": "Mykolaiv International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "ODS",
+    "city": "Odessa",
+    "name": "Odessa International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "PLV",
+    "city": "Poltava",
+    "name": "Suprunovka Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "VIN",
+    "city": "Vinnitsa",
+    "name": "Vinnytsia/Gavyryshivka Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "OZH",
+    "city": "Zaporozhye",
+    "name": "Zaporizhzhia International Airport",
+    "country": "Ukraine"
+  },
+  {
+    "code": "AUH",
+    "city": "Abu Dhabi",
+    "name": "Abu Dhabi International Airport",
+    "country": "United Arab Emirates"
+  },
+  {
+    "code": "DXB",
+    "city": "Dubai",
+    "name": "Dubai International Airport",
+    "country": "United Arab Emirates"
+  },
+  {
+    "code": "ABZ",
+    "city": "Aberdeen",
+    "name": "Aberdeen Dyce Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "BFS",
+    "city": "Belfast",
+    "name": "Belfast International Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "BHX",
+    "city": "Birmingham",
+    "name": "Birmingham International Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "BRS",
+    "city": "Bristol",
+    "name": "Bristol Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "DSA",
+    "city": "Doncaster, Sheffield",
+    "name": "Robin Hood Doncaster Sheffield Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "EDI",
+    "city": "Edinburgh",
+    "name": "Edinburgh Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "GLA",
+    "city": "Glasgow",
+    "name": "Glasgow International Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "HUY",
+    "city": "Humberside",
+    "name": "Humberside Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "INV",
+    "city": "Inverness",
+    "name": "Inverness Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "LBA",
+    "city": "Leeds",
+    "name": "Leeds Bradford Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "LPL",
+    "city": "Liverpool",
+    "name": "Liverpool John Lennon Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "LTN",
+    "city": "London",
+    "name": "London Luton Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "LGW",
+    "city": "London",
+    "name": "London Gatwick Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "LHR",
+    "city": "London",
+    "name": "London Heathrow Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "STN",
+    "city": "London",
+    "name": "London Stansted Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "MAN",
+    "city": "Manchester",
+    "name": "Manchester Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "NCL",
+    "city": "Newcastle",
+    "name": "Newcastle Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "PIK",
+    "city": "Prestwick",
+    "name": "Glasgow Prestwick Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "SEN",
+    "city": "Southend",
+    "name": "Southend Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "MME",
+    "city": "Teesside",
+    "name": "Durham Tees Valley Airport",
+    "country": "United Kingdom"
+  },
+  {
+    "code": "ALB",
+    "city": "Albany",
+    "name": "Albany International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "ABQ",
+    "city": "Albuquerque",
+    "name": "Albuquerque International Sunport",
+    "country": "United States"
+  },
+  {
+    "code": "ATL",
+    "city": "Atlanta",
+    "name": "Hartsfield Jackson Atlanta International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "AUS",
+    "city": "Austin",
+    "name": "Austin Bergstrom International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BWI",
+    "city": "Baltimore",
+    "name": "Baltimore/Washington International Thurgood Marshall Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BTR",
+    "city": "Baton Rouge",
+    "name": "Baton Rouge Metropolitan Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BHM",
+    "city": "Birmingham",
+    "name": "Birmingham-Shuttlesworth International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BOI",
+    "city": "Boise",
+    "name": "Boise Air Terminal/Gowen Field",
+    "country": "United States"
+  },
+  {
+    "code": "BOS",
+    "city": "Boston",
+    "name": "General Edward Lawrence Logan International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BUF",
+    "city": "Buffalo",
+    "name": "Buffalo Niagara International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "AGS",
+    "city": "Bush Field",
+    "name": "Augusta Regional At Bush Field",
+    "country": "United States"
+  },
+  {
+    "code": "CLT",
+    "city": "Charlotte",
+    "name": "Charlotte Douglas International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MDW",
+    "city": "Chicago",
+    "name": "Chicago Midway International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "ORD",
+    "city": "Chicago",
+    "name": "Chicago O'Hare International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "CLE",
+    "city": "Cleveland",
+    "name": "Cleveland Hopkins International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "CMH",
+    "city": "Columbus",
+    "name": "John Glenn Columbus International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "CRP",
+    "city": "Corpus Christi",
+    "name": "Corpus Christi International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "DAL",
+    "city": "Dallas",
+    "name": "Dallas Love Field",
+    "country": "United States"
+  },
+  {
+    "code": "DFW",
+    "city": "Dallas-Fort Worth",
+    "name": "Dallas Fort Worth International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "DAY",
+    "city": "Dayton",
+    "name": "James M Cox Dayton International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "DEN",
+    "city": "Denver",
+    "name": "Denver International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "DTW",
+    "city": "Detroit",
+    "name": "Detroit Metropolitan Wayne County Airport",
+    "country": "United States"
+  },
+  {
+    "code": "ELP",
+    "city": "El Paso",
+    "name": "El Paso International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "FLL",
+    "city": "Fort Lauderdale",
+    "name": "Fort Lauderdale Hollywood International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "RSW",
+    "city": "Fort Myers",
+    "name": "Southwest Florida International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "FAT",
+    "city": "Fresno",
+    "name": "Fresno Yosemite International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "GNV",
+    "city": "Gainesville",
+    "name": "Gainesville Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "GDV",
+    "city": "Glendive",
+    "name": "Dawson Community Airport",
+    "country": "United States"
+  },
+  {
+    "code": "GRR",
+    "city": "Grand Rapids",
+    "name": "Gerald R. Ford International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "GSO",
+    "city": "Greensboro",
+    "name": "Piedmont Triad International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "HNL",
+    "city": "Honolulu",
+    "name": "Daniel K Inouye International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "IAH",
+    "city": "Houston",
+    "name": "George Bush Intercontinental Houston Airport",
+    "country": "United States"
+  },
+  {
+    "code": "HSV",
+    "city": "Huntsville",
+    "name": "Huntsville International Carl T Jones Field",
+    "country": "United States"
+  },
+  {
+    "code": "IND",
+    "city": "Indianapolis",
+    "name": "Indianapolis International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "JAX",
+    "city": "Jacksonville",
+    "name": "Jacksonville International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "OGG",
+    "city": "Kahului",
+    "name": "Kahului Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MCI",
+    "city": "Kansas City",
+    "name": "Kansas City International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "TYS",
+    "city": "Knoxville",
+    "name": "McGhee Tyson Airport",
+    "country": "United States"
+  },
+  {
+    "code": "LFT",
+    "city": "Lafayette",
+    "name": "Lafayette Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "LAS",
+    "city": "Las Vegas",
+    "name": "McCarran International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "LIT",
+    "city": "Little Rock",
+    "name": "Bill & Hillary Clinton National Airport/Adams Field",
+    "country": "United States"
+  },
+  {
+    "code": "LGB",
+    "city": "Long Beach",
+    "name": "Long Beach /Daugherty Field/ Airport",
+    "country": "United States"
+  },
+  {
+    "code": "LAX",
+    "city": "Los Angeles",
+    "name": "Los Angeles International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MEM",
+    "city": "Memphis",
+    "name": "Memphis International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MIA",
+    "city": "Miami",
+    "name": "Miami International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MAF",
+    "city": "Midland",
+    "name": "Midland International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MKE",
+    "city": "Milwaukee",
+    "name": "General Mitchell International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MSP",
+    "city": "Minneapolis",
+    "name": "Minneapolis-St Paul International/Wold-Chamberlain Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MOB",
+    "city": "Mobile",
+    "name": "Mobile Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MLU",
+    "city": "Monroe",
+    "name": "Monroe Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BNA",
+    "city": "Nashville",
+    "name": "Nashville International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MSY",
+    "city": "New Orleans",
+    "name": "Louis Armstrong New Orleans International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "LGA",
+    "city": "New York",
+    "name": "La Guardia Airport",
+    "country": "United States"
+  },
+  {
+    "code": "JFK",
+    "city": "New York",
+    "name": "John F Kennedy International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "EWR",
+    "city": "Newark",
+    "name": "Newark Liberty International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "ORF",
+    "city": "Norfolk",
+    "name": "Norfolk International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "OAK",
+    "city": "Oakland",
+    "name": "Metropolitan Oakland International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "OMA",
+    "city": "Omaha",
+    "name": "Eppley Airfield",
+    "country": "United States"
+  },
+  {
+    "code": "ONT",
+    "city": "Ontario",
+    "name": "Ontario International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MCO",
+    "city": "Orlando",
+    "name": "Orlando International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PNS",
+    "city": "Pensacola",
+    "name": "Pensacola Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PHL",
+    "city": "Philadelphia",
+    "name": "Philadelphia International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PHX",
+    "city": "Phoenix",
+    "name": "Phoenix Sky Harbor International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PIT",
+    "city": "Pittsburgh",
+    "name": "Pittsburgh International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PDX",
+    "city": "Portland",
+    "name": "Portland International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "PVD",
+    "city": "Providence",
+    "name": "Theodore Francis Green State Airport",
+    "country": "United States"
+  },
+  {
+    "code": "RDU",
+    "city": "Raleigh-durham",
+    "name": "Raleigh Durham International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "RIC",
+    "city": "Richmond",
+    "name": "Richmond International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SMF",
+    "city": "Sacramento",
+    "name": "Sacramento International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SLC",
+    "city": "Salt Lake City",
+    "name": "Salt Lake City International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SAT",
+    "city": "San Antonio",
+    "name": "San Antonio International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SAN",
+    "city": "San Diego",
+    "name": "San Diego International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SFO",
+    "city": "San Francisco",
+    "name": "San Francisco International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SJC",
+    "city": "San Jose",
+    "name": "Norman Y. Mineta San Jose International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SNA",
+    "city": "Santa Ana",
+    "name": "John Wayne Airport-Orange County Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SRQ",
+    "city": "Sarasota",
+    "name": "Sarasota Bradenton International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SEA",
+    "city": "Seattle",
+    "name": "Seattle Tacoma International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "SHV",
+    "city": "Shreveport",
+    "name": "Shreveport Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "STL",
+    "city": "St. Louis",
+    "name": "St Louis Lambert International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "TPA",
+    "city": "Tampa",
+    "name": "Tampa International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "TUS",
+    "city": "Tucson",
+    "name": "Tucson International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "TUL",
+    "city": "Tulsa",
+    "name": "Tulsa International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "ICT",
+    "city": "Wichita",
+    "name": "Wichita Eisenhower National Airport",
+    "country": "United States"
+  },
+  {
+    "code": "BDL",
+    "city": "Windsor Locks",
+    "name": "Bradley International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MVD",
+    "city": "Montevideo",
+    "name": "Carrasco International /General C L Berisso Airport",
+    "country": "Uruguay"
+  },
+  {
+    "code": "PDP",
+    "city": "Punta del Este",
+    "name": "Capitan Corbeta CA Curbelo International Airport",
+    "country": "Uruguay"
+  },
+  {
+    "code": "SON",
+    "city": "Santo",
+    "name": "Santo Pekoa International Airport",
+    "country": "Vanuatu"
+  },
+  {
+    "code": "BMV",
+    "city": "Buonmethuot",
+    "name": "Buon Ma Thuot Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "VCA",
+    "city": "Can Tho",
+    "name": "Can Tho International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "VCL",
+    "city": "Chu Lai",
+    "name": "Chu Lai International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "VCS",
+    "city": "Conson",
+    "name": "Co Ong Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "DLI",
+    "city": "Dalat",
+    "name": "Lien Khuong Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "DAD",
+    "city": "Danang",
+    "name": "Da Nang International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "DIN",
+    "city": "Dienbienphu",
+    "name": "Dien Bien Phu Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "HPH",
+    "city": "Haiphong",
+    "name": "Cat Bi International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "HAN",
+    "city": "Hanoi",
+    "name": "Noi Bai International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "SGN",
+    "city": "Ho Chi Minh City",
+    "name": "Tan Son Nhat International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "CXR",
+    "city": "Nha Trang",
+    "name": "Cam Ranh Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "UIH",
+    "city": "Phucat",
+    "name": "Phu Cat Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "PQC",
+    "city": "Phuquoc",
+    "name": "Phu Quoc International Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "VKG",
+    "city": "Rach Gia",
+    "name": "Rach Gia Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "TBB",
+    "city": "Tuy Hoa",
+    "name": "Dong Tac Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "VII",
+    "city": "Vinh",
+    "name": "Vinh Airport",
+    "country": "Vietnam"
+  },
+  {
+    "code": "STX",
+    "city": "St. Croix Island",
+    "name": "Henry E Rohlsen Airport",
+    "country": "Virgin Islands"
+  },
+  {
+    "code": "STT",
+    "city": "St. Thomas",
+    "name": "Cyril E. King Airport",
+    "country": "Virgin Islands"
+  }
+]

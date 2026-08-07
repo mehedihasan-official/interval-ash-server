@@ -12,7 +12,8 @@
     "vercel-build": "npm run build",
     "start": "node dist/src/server.js",
     "lint": "eslint \"src/**/*.ts\"",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "seed:flights": "ts-node src/scripts/seed-flights.ts"
   },
   "author": "Coredenz",
   "license": "ISC",
