@@ -13,7 +13,8 @@
     "start": "node dist/src/server.js",
     "lint": "eslint \"src/**/*.ts\"",
     "clean": "rimraf dist",
-    "seed:flights": "ts-node src/scripts/seed-flights.ts"
+    "seed:flights": "ts-node src/scripts/seed-flights.ts",
+    "seed:cars": "ts-node src/scripts/seed-cars.ts"
   },
   "author": "Coredenz",
   "license": "ISC",
