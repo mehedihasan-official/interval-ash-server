@@ -13,6 +13,7 @@ import {
   FLIGHT_ADDON_PRICING,
   calculateFlightPricing,
 } from '../utils/flight-pricing';
+import { applyRouteMultiplier, resolveRouteContext } from '../utils/route-context';
 
 type SeatSelection = string | null;
 
@@ -26,6 +27,11 @@ interface CreateBookingBody {
   contactInfo: { email: string; phone: string };
   addOns?: { extraBaggage?: boolean; seatSelections?: SeatSelection[] };
   paymentMethod: 'cash' | 'points';
+  // When the traveler booked a synthesized-route flight (any route the
+  // seed data doesn't cover directly), the client passes the actual
+  // origin/destination it displayed so the booking snapshot records
+  // MCO→DXB instead of the template flight's original JFK→MIA.
+  routeOverride?: { origin: string; destination: string };
 }
 
 /**
@@ -74,11 +80,38 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
 
   if (!flight) throw new AppError('Flight not found', 404);
 
+  // If the traveler booked a route the seed data didn't have (the common
+  // case), the client sends the origin/destination it actually showed
+  // them. We resolve that route the same way the search endpoint did so
+  // the snapshot's route, city names, and retail price all match what
+  // the traveler saw when they clicked "Complete Booking".
+  const overrideOrigin = body.routeOverride?.origin?.trim().toUpperCase();
+  const overrideDestination = body.routeOverride?.destination?.trim().toUpperCase();
+  const hasRouteOverride =
+    !!overrideOrigin &&
+    !!overrideDestination &&
+    (overrideOrigin !== flight.origin || overrideDestination !== flight.destination);
+
+  const snapshotOrigin = hasRouteOverride ? overrideOrigin! : flight.origin;
+  const snapshotDestination = hasRouteOverride
+    ? overrideDestination!
+    : flight.destination;
+  let snapshotOriginCity = flight.originCity;
+  let snapshotDestinationCity = flight.destinationCity;
+  let effectiveRetailPrice = flight.retailPrice;
+
+  if (hasRouteOverride) {
+    const context = await resolveRouteContext(snapshotOrigin, snapshotDestination);
+    snapshotOriginCity = context.originCity;
+    snapshotDestinationCity = context.destinationCity;
+    effectiveRetailPrice = applyRouteMultiplier(flight.retailPrice, context);
+  }
+
   const seatSelections = body.addOns?.seatSelections ?? [];
   const extraBaggage = body.addOns?.extraBaggage ?? false;
   const seatCount = countSelectedSeats(seatSelections);
 
-  const basePricing = calculateFlightPricing(flight.retailPrice);
+  const basePricing = calculateFlightPricing(effectiveRetailPrice);
   const addOnsCash =
     seatCount * FLIGHT_ADDON_PRICING.seatCash +
     (extraBaggage ? FLIGHT_ADDON_PRICING.baggageCash : 0);
@@ -103,10 +136,10 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
       airline: flight.airline,
       airlineLogo: flight.airlineLogo,
       flightNumber: flight.flightNumber,
-      origin: flight.origin,
-      originCity: flight.originCity,
-      destination: flight.destination,
-      destinationCity: flight.destinationCity,
+      origin: snapshotOrigin,
+      originCity: snapshotOriginCity,
+      destination: snapshotDestination,
+      destinationCity: snapshotDestinationCity,
       departureTime: flight.departureTime,
       arrivalTime: flight.arrivalTime,
       duration: flight.duration,
@@ -115,7 +148,7 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
       stopLabel: flight.stopLabel,
       baggage: flight.baggage,
       refundable: flight.refundable,
-      retailPrice: flight.retailPrice,
+      retailPrice: effectiveRetailPrice,
     },
     tripType: body.tripType ?? 'oneway',
     departureDate: body.departureDate,
