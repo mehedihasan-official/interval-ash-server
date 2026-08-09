@@ -14,7 +14,12 @@
  */
 import path from 'path';
 import fs from 'fs';
+import { configureLocalDns } from './lib/configure-local-dns';
 import { connectToDatabase, disconnectFromDatabase } from '../config/database';
+
+// Force a reliable public resolver BEFORE anything touches Mongoose —
+// some local DNS setups can't resolve Atlas's SRV records.
+configureLocalDns();
 import { CarModel } from '../models/car.model';
 import { CAR_IMAGE_OVERRIDES } from './data/image-overrides';
 
@@ -68,7 +73,15 @@ function deriveMileagePlan(raw: RawCar): {
 }
 
 async function seedCars(): Promise<void> {
-  const cars = loadJson<RawCar[]>('cars.json');
+  // The original 11-car dataset was extracted from the Expedia demo;
+  // cars-extra.json carries the additional inventory we author here
+  // (Teslas, BMWs, pickup trucks, etc.). Loading both and de-duping by
+  // id keeps the two files independently editable.
+  const baseCars = loadJson<RawCar[]>('cars.json');
+  const extraCars = loadJson<RawCar[]>('cars-extra.json');
+  const byId = new Map<string, RawCar>();
+  for (const car of [...baseCars, ...extraCars]) byId.set(car.id, car);
+  const cars = Array.from(byId.values());
   const ops = cars.map((raw) => {
     const plan = deriveMileagePlan(raw);
     return {

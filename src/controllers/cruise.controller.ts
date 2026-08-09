@@ -160,6 +160,39 @@ export const getCruiseCategories = catchAsync(
   },
 );
 
+/**
+ * GET /api/cruises/meta/ports?search=miami
+ *
+ * Autocomplete-friendly port search. Backs the "Departure Port" input
+ * on the cruise search form so a traveler typing "mi" gets both
+ * "Miami, FL" and "Miami Beach, FL" without having to know the exact
+ * label the seed data used. Returns at most 15 matches.
+ */
+export const searchCruisePorts = catchAsync(async (req: Request, res: Response) => {
+  const search = String(req.query.search || '').trim();
+  const parsedLimit = Number.parseInt(String(req.query.limit), 10);
+  const limit =
+    Number.isFinite(parsedLimit) && parsedLimit > 0
+      ? Math.min(parsedLimit, 50)
+      : 15;
+
+  const filter: FilterQuery<ICruise> = {};
+  if (search) {
+    const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    filter.departurePort = new RegExp(escaped, 'i');
+  }
+
+  const raw = (await CruiseModel.distinct('departurePort', filter)) as string[];
+  // distinct() has no built-in sort/limit — do both in memory. The
+  // total number of ports is small (dozens) so this stays cheap.
+  const ports = raw
+    .sort((a, b) => a.localeCompare(b))
+    .slice(0, limit)
+    .map((port) => ({ port }));
+
+  sendResponse(res, 200, 'Cruise ports retrieved successfully', ports);
+});
+
 /** POST /api/cruises (admin) */
 export const createCruise = catchAsync(async (req: Request, res: Response) => {
   const body = req.body;

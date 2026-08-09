@@ -12,7 +12,12 @@
  */
 import path from 'path';
 import fs from 'fs';
+import { configureLocalDns } from './lib/configure-local-dns';
 import { connectToDatabase, disconnectFromDatabase } from '../config/database';
+
+// Force a reliable public resolver BEFORE anything touches Mongoose —
+// some local DNS setups can't resolve Atlas's SRV records.
+configureLocalDns();
 import { AirportModel } from '../models/airport.model';
 import { FlightModel, IFlight } from '../models/flight.model';
 

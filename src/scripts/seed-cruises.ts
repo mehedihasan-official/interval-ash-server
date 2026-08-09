@@ -9,7 +9,12 @@
  */
 import path from 'path';
 import fs from 'fs';
+import { configureLocalDns } from './lib/configure-local-dns';
 import { connectToDatabase, disconnectFromDatabase } from '../config/database';
+
+// Force a reliable public resolver BEFORE anything touches Mongoose —
+// some local DNS setups can't resolve Atlas's SRV records.
+configureLocalDns();
 import { CruiseModel, ICruise, CabinKey } from '../models/cruise.model';
 import { CRUISE_IMAGE_OVERRIDES } from './data/image-overrides';
 
@@ -58,7 +63,14 @@ function futureProof(dates: string[]): string[] {
 }
 
 async function seedCruises(): Promise<void> {
-  const cruises = loadJson<RawCruise[]>('cruises.json');
+  // Base cruises come from the demo dataset; cruises-extra.json adds
+  // our own inventory across existing and new destinations (Asia,
+  // Antarctica). De-dupe by id so re-running is safe.
+  const baseCruises = loadJson<RawCruise[]>('cruises.json');
+  const extraCruises = loadJson<RawCruise[]>('cruises-extra.json');
+  const byId = new Map<string, RawCruise>();
+  for (const cruise of [...baseCruises, ...extraCruises]) byId.set(cruise.id, cruise);
+  const cruises = Array.from(byId.values());
   const ops = cruises.map((raw) => ({
     updateOne: {
       filter: { cruiseId: raw.id },

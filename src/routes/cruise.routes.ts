@@ -4,6 +4,7 @@ import {
   deleteCruise,
   getCruiseById,
   getCruiseCategories,
+  searchCruisePorts,
   searchCruises,
   updateCruise,
 } from '../controllers/cruise.controller';
@@ -11,9 +12,10 @@ import { requireAdmin } from '../middlewares/require-admin';
 
 const router = Router();
 
-// Categories endpoint has to be declared before /:id so it doesn't get
+// Meta endpoints have to be declared before /:id so they don't get
 // swallowed by the wildcard.
 router.get('/meta/categories', getCruiseCategories);
+router.get('/meta/ports', searchCruisePorts);
 
 router.get('/', searchCruises);
 router.get('/:id', getCruiseById);
