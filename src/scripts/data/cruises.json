@@ -1,0 +1,1109 @@
+[
+  {
+    "id": "CR-CAR-001",
+    "name": "Harmony of the Seas",
+    "cruiseLine": "Royal Caribbean",
+    "cruiseLineLogo": "https://logo.clearbit.com/royalcaribbean.com",
+    "route": "Fort Lauderdale → Nassau → St. Maarten → St. Thomas",
+    "departurePort": "Fort Lauderdale, FL",
+    "duration": 7,
+    "category": "Caribbean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Harmony_of_the_Seas_(31087257484).jpg/1200px-Harmony_of_the_Seas_(31087257484).jpg",
+    "rating": 4.7,
+    "reviews": 2841,
+    "retailPrice": 1299,
+    "itinerary": [
+      "Fort Lauderdale",
+      "Nassau",
+      "St. Maarten",
+      "St. Thomas",
+      "San Juan"
+    ],
+    "shipFeatures": [
+      "18 Decks",
+      "5,400 Guests",
+      "Water Park",
+      "Rock Climbing",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1299
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 1599
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 1999
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 3499
+      }
+    },
+    "departureDates": [
+      "2025-09-14",
+      "2025-10-05",
+      "2025-11-02",
+      "2025-12-07",
+      "2026-01-11"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Kids club",
+      "Fitness center"
+    ]
+  },
+  {
+    "id": "CR-CAR-002",
+    "name": "Norwegian Encore",
+    "cruiseLine": "Norwegian Cruise Line",
+    "cruiseLineLogo": "https://logo.clearbit.com/ncl.com",
+    "route": "Miami → Key West → Cozumel → Belize → Roatan",
+    "departurePort": "Miami, FL",
+    "duration": 7,
+    "category": "Caribbean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/'Norwegian_Encore'_docked_in_Victoria,_British_Columbia_01.jpg/1200px-'Norwegian_Encore'_docked_in_Victoria,_British_Columbia_01.jpg",
+    "rating": 4.5,
+    "reviews": 1923,
+    "retailPrice": 1099,
+    "itinerary": [
+      "Miami",
+      "Key West",
+      "Cozumel",
+      "Belize City",
+      "Roatan"
+    ],
+    "shipFeatures": [
+      "20 Decks",
+      "3,998 Guests",
+      "Go-Kart Track",
+      "Laser Tag",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1099
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 1349
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 1749
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 2999
+      }
+    },
+    "departureDates": [
+      "2025-09-07",
+      "2025-10-12",
+      "2025-11-16",
+      "2025-12-14",
+      "2026-02-08"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Spa access",
+      "Fitness center"
+    ]
+  },
+  {
+    "id": "CR-CAR-003",
+    "name": "Carnival Vista",
+    "cruiseLine": "Carnival Cruise Line",
+    "cruiseLineLogo": "https://logo.clearbit.com/carnival.com",
+    "route": "Miami → Nassau → Freeport → Half Moon Cay",
+    "departurePort": "Miami, FL",
+    "duration": 5,
+    "category": "Caribbean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Carnival_Vista_docked_in_Valletta_hnapel_01.jpg/1200px-Carnival_Vista_docked_in_Valletta_hnapel_01.jpg",
+    "rating": 4.3,
+    "reviews": 2156,
+    "retailPrice": 699,
+    "itinerary": [
+      "Miami",
+      "Nassau",
+      "Freeport",
+      "Half Moon Cay"
+    ],
+    "shipFeatures": [
+      "15 Decks",
+      "3,954 Guests",
+      "WaterWorks",
+      "SkyRide",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 699
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 899
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 1099
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 2299
+      }
+    },
+    "departureDates": [
+      "2025-09-11",
+      "2025-10-09",
+      "2025-11-06",
+      "2025-12-04",
+      "2026-01-08"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Waterpark access"
+    ]
+  },
+  {
+    "id": "CR-CAR-004",
+    "name": "Disney Fantasy",
+    "cruiseLine": "Disney Cruise Line",
+    "cruiseLineLogo": "https://logo.clearbit.com/disneycruise.disney.go.com",
+    "route": "Port Canaveral → Castaway Cay → Nassau",
+    "departurePort": "Port Canaveral, FL",
+    "duration": 7,
+    "category": "Caribbean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Disney_Fantasy_(12173584185).jpg/1200px-Disney_Fantasy_(12173584185).jpg",
+    "rating": 4.9,
+    "reviews": 3102,
+    "retailPrice": 1799,
+    "itinerary": [
+      "Port Canaveral",
+      "Castaway Cay",
+      "Nassau"
+    ],
+    "shipFeatures": [
+      "14 Decks",
+      "2,500 Guests",
+      "AquaDuck",
+      "Disney Shows",
+      "Kids Clubs"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1799
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2199
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 2799
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 5999
+      }
+    },
+    "departureDates": [
+      "2025-09-06",
+      "2025-10-04",
+      "2025-11-08",
+      "2025-12-06",
+      "2026-01-10"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Kids club",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-MED-001",
+    "name": "MSC Bellissima",
+    "cruiseLine": "MSC Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/msccruises.com",
+    "route": "Barcelona → Marseille → Genoa → Naples → Palermo → Valletta",
+    "departurePort": "Barcelona, Spain",
+    "duration": 7,
+    "category": "Mediterranean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/MSC_Bellissima_20190226_191245.jpg/1200px-MSC_Bellissima_20190226_191245.jpg",
+    "rating": 4.6,
+    "reviews": 1456,
+    "retailPrice": 1599,
+    "itinerary": [
+      "Barcelona",
+      "Marseille",
+      "Genoa",
+      "Naples",
+      "Palermo",
+      "Valletta"
+    ],
+    "shipFeatures": [
+      "19 Decks",
+      "5,686 Guests",
+      "Waterslides",
+      "Theater",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1599
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 1899
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 2299
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 3999
+      }
+    },
+    "departureDates": [
+      "2025-09-20",
+      "2025-10-18",
+      "2025-11-08",
+      "2026-03-14",
+      "2026-04-11"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Port charges",
+      "Fitness center"
+    ]
+  },
+  {
+    "id": "CR-MED-002",
+    "name": "Celebrity Silhouette",
+    "cruiseLine": "Celebrity Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/celebritycruises.com",
+    "route": "Athens → Mykonos → Santorini → Rhodes → Kusadasi → Istanbul",
+    "departurePort": "Athens (Piraeus), Greece",
+    "duration": 10,
+    "category": "Mediterranean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Celebrity_Silhouette_(ship,_2011)_at_Liverpool_Cruise_Terminal_1.jpg/1200px-Celebrity_Silhouette_(ship,_2011)_at_Liverpool_Cruise_Terminal_1.jpg",
+    "rating": 4.8,
+    "reviews": 987,
+    "retailPrice": 2199,
+    "itinerary": [
+      "Athens",
+      "Mykonos",
+      "Santorini",
+      "Rhodes",
+      "Kusadasi",
+      "Istanbul"
+    ],
+    "shipFeatures": [
+      "15 Decks",
+      "2,850 Guests",
+      "Rooftop Pool",
+      "Fine Dining",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 2199
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2599
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 3099
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 5499
+      }
+    },
+    "departureDates": [
+      "2025-09-28",
+      "2025-10-26",
+      "2026-04-19",
+      "2026-05-17",
+      "2026-06-14"
+    ],
+    "includes": [
+      "All meals",
+      "Specialty dining",
+      "Entertainment",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-MED-003",
+    "name": "Viking Star",
+    "cruiseLine": "Viking Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/vikingcruises.com",
+    "route": "Rome → Barcelona → Lisbon → London",
+    "departurePort": "Rome (Civitavecchia), Italy",
+    "duration": 15,
+    "category": "Mediterranean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/MS_Viking_Star_passing_the_O2_dome.JPG/1200px-MS_Viking_Star_passing_the_O2_dome.JPG",
+    "rating": 4.8,
+    "reviews": 812,
+    "retailPrice": 3499,
+    "itinerary": [
+      "Rome",
+      "Florence",
+      "Monaco",
+      "Barcelona",
+      "Lisbon",
+      "London"
+    ],
+    "shipFeatures": [
+      "7 Decks",
+      "930 Guests",
+      "Adults Only",
+      "Infinity Pool",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Standard",
+        "retailPrice": 3499
+      },
+      "outside": {
+        "name": "Deluxe Veranda",
+        "retailPrice": 4299
+      },
+      "balcony": {
+        "name": "Penthouse Jr.",
+        "retailPrice": 5499
+      },
+      "suite": {
+        "name": "Explorer Suite",
+        "retailPrice": 8999
+      }
+    },
+    "departureDates": [
+      "2025-09-21",
+      "2025-10-19",
+      "2026-04-12",
+      "2026-05-10"
+    ],
+    "includes": [
+      "All meals",
+      "Beverages",
+      "Shore excursions",
+      "Wi-Fi",
+      "Gratuities"
+    ]
+  },
+  {
+    "id": "CR-MED-004",
+    "name": "Azamara Quest",
+    "cruiseLine": "Azamara",
+    "cruiseLineLogo": "https://logo.clearbit.com/azamara.com",
+    "route": "Istanbul → Athens → Dubrovnik → Venice",
+    "departurePort": "Istanbul, Turkey",
+    "duration": 12,
+    "category": "Mediterranean",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cruise_ship_Azamara_Quest_off_Saint-Tropez,_France_-_24_Oct._2010.jpg/1200px-Cruise_ship_Azamara_Quest_off_Saint-Tropez,_France_-_24_Oct._2010.jpg",
+    "rating": 4.7,
+    "reviews": 654,
+    "retailPrice": 2799,
+    "itinerary": [
+      "Istanbul",
+      "Mykonos",
+      "Athens",
+      "Kotor",
+      "Dubrovnik",
+      "Venice"
+    ],
+    "shipFeatures": [
+      "10 Decks",
+      "686 Guests",
+      "Intimate Ship",
+      "Fine Dining",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Interior",
+        "retailPrice": 2799
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 3299
+      },
+      "balcony": {
+        "name": "Veranda",
+        "retailPrice": 3999
+      },
+      "suite": {
+        "name": "Club Suite",
+        "retailPrice": 6499
+      }
+    },
+    "departureDates": [
+      "2025-10-05",
+      "2025-11-02",
+      "2026-04-26",
+      "2026-05-24"
+    ],
+    "includes": [
+      "All meals",
+      "Beverages",
+      "Gratuities",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-ALA-001",
+    "name": "Grand Princess",
+    "cruiseLine": "Princess Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/princess.com",
+    "route": "Seattle → Juneau → Skagway → Glacier Bay → Ketchikan → Vancouver",
+    "departurePort": "Seattle, WA",
+    "duration": 7,
+    "category": "Alaska",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Grand_Princess.jpg/1200px-Grand_Princess.jpg",
+    "rating": 4.5,
+    "reviews": 1102,
+    "retailPrice": 1799,
+    "itinerary": [
+      "Seattle",
+      "Juneau",
+      "Skagway",
+      "Glacier Bay",
+      "Ketchikan",
+      "Vancouver"
+    ],
+    "shipFeatures": [
+      "18 Decks",
+      "2,600 Guests",
+      "Glacier Viewing Deck",
+      "Spa",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1799
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2099
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 2599
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 4299
+      }
+    },
+    "departureDates": [
+      "2025-09-06",
+      "2025-09-20",
+      "2025-10-04",
+      "2026-05-09",
+      "2026-05-23"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Port charges",
+      "Glacier viewing"
+    ]
+  },
+  {
+    "id": "CR-ALA-002",
+    "name": "Windstar Wind Surf",
+    "cruiseLine": "Windstar Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/windstarcruises.com",
+    "route": "Juneau → Sitka → Ketchikan → Victoria → Seattle",
+    "departurePort": "Juneau, AK",
+    "duration": 7,
+    "category": "Alaska",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/'Wind_Surf'_Nassau_(7638358384).jpg/1200px-'Wind_Surf'_Nassau_(7638358384).jpg",
+    "rating": 4.6,
+    "reviews": 423,
+    "retailPrice": 2199,
+    "itinerary": [
+      "Juneau",
+      "Sitka",
+      "Ketchikan",
+      "Victoria",
+      "Seattle"
+    ],
+    "shipFeatures": [
+      "5 Masts",
+      "310 Guests",
+      "Intimate Ship",
+      "Water Sports",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Cabin",
+        "retailPrice": 2199
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2699
+      },
+      "balcony": {
+        "name": "Bridge Suite",
+        "retailPrice": 3999
+      },
+      "suite": {
+        "name": "Owner Suite",
+        "retailPrice": 5499
+      }
+    },
+    "departureDates": [
+      "2025-09-13",
+      "2025-09-27",
+      "2026-05-16",
+      "2026-05-30"
+    ],
+    "includes": [
+      "All meals",
+      "Beverages",
+      "Water sports",
+      "Gratuities"
+    ]
+  },
+  {
+    "id": "CR-BAH-001",
+    "name": "Bahamas Paradise",
+    "cruiseLine": "Bahamas Paradise Cruise Line",
+    "cruiseLineLogo": "https://logo.clearbit.com/bahamasparadisecruise.com",
+    "route": "Palm Beach → Grand Bahama Island",
+    "departurePort": "Palm Beach, FL",
+    "duration": 2,
+    "category": "Bahamas",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Grand_Celebration_(5839736971).jpg/1200px-Grand_Celebration_(5839736971).jpg",
+    "rating": 4.1,
+    "reviews": 1890,
+    "retailPrice": 299,
+    "itinerary": [
+      "Palm Beach",
+      "Grand Bahama Island"
+    ],
+    "shipFeatures": [
+      "11 Decks",
+      "1,200 Guests",
+      "Pool",
+      "Casino",
+      "Entertainment"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Interior",
+        "retailPrice": 299
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 399
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 549
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 999
+      }
+    },
+    "departureDates": [
+      "2025-09-11",
+      "2025-10-09",
+      "2025-11-06",
+      "2025-12-04",
+      "2026-01-08"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-EUR-001",
+    "name": "Queen Mary 2",
+    "cruiseLine": "Cunard",
+    "cruiseLineLogo": "https://logo.clearbit.com/cunard.com",
+    "route": "Southampton → Lisbon → Gibraltar → Barcelona → Marseille → Rome",
+    "departurePort": "Southampton, UK",
+    "duration": 14,
+    "category": "Europe",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Queen_Mary_2.JPG/1200px-Queen_Mary_2.JPG",
+    "rating": 4.9,
+    "reviews": 743,
+    "retailPrice": 3299,
+    "itinerary": [
+      "Southampton",
+      "Lisbon",
+      "Gibraltar",
+      "Barcelona",
+      "Marseille",
+      "Rome"
+    ],
+    "shipFeatures": [
+      "13 Decks",
+      "2,691 Guests",
+      "White Star Service",
+      "Library",
+      "Ballroom"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 3299
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 3999
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 4799
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 8999
+      }
+    },
+    "departureDates": [
+      "2025-10-03",
+      "2026-01-09",
+      "2026-03-20",
+      "2026-05-01"
+    ],
+    "includes": [
+      "All meals",
+      "White glove service",
+      "Entertainment",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-EUR-002",
+    "name": "Oceania Marina",
+    "cruiseLine": "Oceania Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/oceaniacruises.com",
+    "route": "London → Amsterdam → Copenhagen → Stockholm → Helsinki → St. Petersburg",
+    "departurePort": "London (Southampton), UK",
+    "duration": 14,
+    "category": "Europe",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Oceania_Cruises_Riviera_02.JPG/1200px-Oceania_Cruises_Riviera_02.JPG",
+    "rating": 4.8,
+    "reviews": 621,
+    "retailPrice": 3799,
+    "itinerary": [
+      "London",
+      "Amsterdam",
+      "Copenhagen",
+      "Stockholm",
+      "Helsinki",
+      "St. Petersburg"
+    ],
+    "shipFeatures": [
+      "11 Decks",
+      "1,250 Guests",
+      "Culinary Focus",
+      "Fine Dining",
+      "Canyon Ranch Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 3799
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 4399
+      },
+      "balcony": {
+        "name": "Veranda",
+        "retailPrice": 5299
+      },
+      "suite": {
+        "name": "Penthouse Suite",
+        "retailPrice": 9999
+      }
+    },
+    "departureDates": [
+      "2025-10-11",
+      "2026-04-04",
+      "2026-05-02",
+      "2026-05-30"
+    ],
+    "includes": [
+      "All meals",
+      "Beverages",
+      "Specialty dining",
+      "Gratuities",
+      "Wi-Fi"
+    ]
+  },
+  {
+    "id": "CR-EUR-003",
+    "name": "Silver Muse",
+    "cruiseLine": "Silversea Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/silversea.com",
+    "route": "Lisbon → Seville → Cadiz → Cartagena → Barcelona → Nice",
+    "departurePort": "Lisbon, Portugal",
+    "duration": 10,
+    "category": "Europe",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Silver_Muse,_Fremantle,_2019_(01).jpg/1200px-Silver_Muse,_Fremantle,_2019_(01).jpg",
+    "rating": 4.9,
+    "reviews": 489,
+    "retailPrice": 5499,
+    "itinerary": [
+      "Lisbon",
+      "Seville",
+      "Cadiz",
+      "Cartagena",
+      "Barcelona",
+      "Nice"
+    ],
+    "shipFeatures": [
+      "8 Decks",
+      "596 Guests",
+      "All-Suite",
+      "Butler Service",
+      "10 Restaurants"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Vista Suite",
+        "retailPrice": 5499
+      },
+      "outside": {
+        "name": "Veranda Suite",
+        "retailPrice": 6999
+      },
+      "balcony": {
+        "name": "Silver Suite",
+        "retailPrice": 9499
+      },
+      "suite": {
+        "name": "Owner Suite",
+        "retailPrice": 18999
+      }
+    },
+    "departureDates": [
+      "2025-10-08",
+      "2026-04-08",
+      "2026-05-06",
+      "2026-06-03"
+    ],
+    "includes": [
+      "All meals",
+      "All beverages",
+      "Butler service",
+      "Shore excursions",
+      "Wi-Fi",
+      "Gratuities"
+    ]
+  },
+  {
+    "id": "CR-HAW-001",
+    "name": "Pride of America",
+    "cruiseLine": "Norwegian Cruise Line",
+    "cruiseLineLogo": "https://logo.clearbit.com/ncl.com",
+    "route": "Honolulu → Kahului → Hilo → Kona → Nawiliwili → Honolulu",
+    "departurePort": "Honolulu, HI",
+    "duration": 7,
+    "category": "Hawaii",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Pride_of_America_on_open_water._(4610730267).jpg/1200px-Pride_of_America_on_open_water._(4610730267).jpg",
+    "rating": 4.6,
+    "reviews": 889,
+    "retailPrice": 1899,
+    "itinerary": [
+      "Honolulu",
+      "Kahului (Maui)",
+      "Hilo (Big Island)",
+      "Kona",
+      "Nawiliwili (Kauai)"
+    ],
+    "shipFeatures": [
+      "15 Decks",
+      "2,186 Guests",
+      "Multiple Pools",
+      "Spa",
+      "Dining"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1899
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2199
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 2699
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 4499
+      }
+    },
+    "departureDates": [
+      "2025-09-13",
+      "2025-10-11",
+      "2025-11-08",
+      "2025-12-06",
+      "2026-01-10"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Inter-island travel"
+    ]
+  },
+  {
+    "id": "CR-TRA-001",
+    "name": "MSC Seashore",
+    "cruiseLine": "MSC Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/msccruises.com",
+    "route": "New York → Lisbon → Barcelona → Marseille",
+    "departurePort": "New York, NY",
+    "duration": 16,
+    "category": "Transatlantic",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Msc_seashore.jpg/1200px-Msc_seashore.jpg",
+    "rating": 4.5,
+    "reviews": 534,
+    "retailPrice": 1999,
+    "itinerary": [
+      "New York",
+      "Lisbon",
+      "Barcelona",
+      "Marseille"
+    ],
+    "shipFeatures": [
+      "20 Decks",
+      "5,877 Guests",
+      "Infinity Pool",
+      "Water Park",
+      "Casino"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1999
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 2499
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 2999
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 5499
+      }
+    },
+    "departureDates": [
+      "2025-10-25",
+      "2026-04-18"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-TRA-002",
+    "name": "Viking Jupiter",
+    "cruiseLine": "Viking Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/vikingcruises.com",
+    "route": "New York → Reykjavik → Bergen → London",
+    "departurePort": "New York, NY",
+    "duration": 15,
+    "category": "Transatlantic",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/MV_Viking_Jupiter.jpg/1200px-MV_Viking_Jupiter.jpg",
+    "rating": 4.8,
+    "reviews": 367,
+    "retailPrice": 4299,
+    "itinerary": [
+      "New York",
+      "Reykjavik",
+      "Akureyri",
+      "Bergen",
+      "London"
+    ],
+    "shipFeatures": [
+      "7 Decks",
+      "930 Guests",
+      "Adults Only",
+      "Aquavit Terrace",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Standard",
+        "retailPrice": 4299
+      },
+      "outside": {
+        "name": "Deluxe Veranda",
+        "retailPrice": 5299
+      },
+      "balcony": {
+        "name": "Penthouse Jr.",
+        "retailPrice": 6999
+      },
+      "suite": {
+        "name": "Explorer Suite",
+        "retailPrice": 11999
+      }
+    },
+    "departureDates": [
+      "2025-09-27",
+      "2026-05-09"
+    ],
+    "includes": [
+      "All meals",
+      "Beverages",
+      "Shore excursions",
+      "Wi-Fi",
+      "Gratuities"
+    ]
+  },
+  {
+    "id": "CR-ME-001",
+    "name": "Costa Smeralda",
+    "cruiseLine": "Costa Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/costacruises.com",
+    "route": "Dubai → Abu Dhabi → Muscat → Bahrain → Kuwait",
+    "departurePort": "Dubai, UAE",
+    "duration": 7,
+    "category": "MiddleEast",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Costa_Smeralda_in_August_2019.jpg/1200px-Costa_Smeralda_in_August_2019.jpg",
+    "rating": 4.4,
+    "reviews": 312,
+    "retailPrice": 1199,
+    "itinerary": [
+      "Dubai",
+      "Abu Dhabi",
+      "Muscat",
+      "Bahrain",
+      "Kuwait"
+    ],
+    "shipFeatures": [
+      "19 Decks",
+      "6,554 Guests",
+      "Multiple Pools",
+      "Casino",
+      "Theater"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 1199
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 1499
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 1899
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 3299
+      }
+    },
+    "departureDates": [
+      "2025-11-15",
+      "2025-12-13",
+      "2026-01-10",
+      "2026-02-07"
+    ],
+    "includes": [
+      "All meals",
+      "Entertainment",
+      "Port charges"
+    ]
+  },
+  {
+    "id": "CR-ME-002",
+    "name": "Celebrity Apex",
+    "cruiseLine": "Celebrity Cruises",
+    "cruiseLineLogo": "https://logo.clearbit.com/celebritycruises.com",
+    "route": "Dubai → Muscat → Abu Dhabi → Fujairah",
+    "departurePort": "Dubai, UAE",
+    "duration": 5,
+    "category": "MiddleEast",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Celebrity_Apex,_with_an_innovative_design_a_whirlpool_is_located_on_top_of_a_cone.jpg/1200px-Celebrity_Apex,_with_an_innovative_design_a_whirlpool_is_located_on_top_of_a_cone.jpg",
+    "rating": 4.7,
+    "reviews": 289,
+    "retailPrice": 999,
+    "itinerary": [
+      "Dubai",
+      "Muscat",
+      "Abu Dhabi",
+      "Fujairah"
+    ],
+    "shipFeatures": [
+      "16 Decks",
+      "2,910 Guests",
+      "Rooftop Garden",
+      "Fine Dining",
+      "Spa"
+    ],
+    "cabinTypes": {
+      "inside": {
+        "name": "Inside",
+        "retailPrice": 999
+      },
+      "outside": {
+        "name": "Ocean View",
+        "retailPrice": 1249
+      },
+      "balcony": {
+        "name": "Balcony",
+        "retailPrice": 1599
+      },
+      "suite": {
+        "name": "Suite",
+        "retailPrice": 3499
+      }
+    },
+    "departureDates": [
+      "2025-11-22",
+      "2025-12-20",
+      "2026-01-17",
+      "2026-02-14"
+    ],
+    "includes": [
+      "All meals",
+      "Specialty dining",
+      "Entertainment",
+      "Port charges"
+    ]
+  }
+]

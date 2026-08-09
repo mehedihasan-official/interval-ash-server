@@ -16,6 +16,7 @@ import path from 'path';
 import fs from 'fs';
 import { connectToDatabase, disconnectFromDatabase } from '../config/database';
 import { CarModel } from '../models/car.model';
+import { CAR_IMAGE_OVERRIDES } from './data/image-overrides';
 
 interface RawCar {
   id: string;
@@ -79,7 +80,9 @@ async function seedCars(): Promise<void> {
             type: raw.type,
             category: raw.category,
             brand: raw.brand,
-            image: raw.image ?? '',
+            // Replace the demo dataset's dealer-site hotlinks (many
+            // return 403/404) with our curated Unsplash CDN images.
+            image: CAR_IMAGE_OVERRIDES[raw.id] || raw.image || '',
             passengers: raw.passengers,
             transmission: raw.transmission,
             bags: raw.bags,

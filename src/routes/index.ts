@@ -8,6 +8,8 @@ import flightRoutes from './flight.routes';
 import flightBookingRoutes from './flight-booking.routes';
 import carRoutes from './car.routes';
 import carBookingRoutes from './car-booking.routes';
+import cruiseRoutes from './cruise.routes';
+import cruiseBookingRoutes from './cruise-booking.routes';
 import { getAllUsers, updateUserRole } from '../controllers/user.controller';
 
 /**
@@ -26,6 +28,8 @@ router.use('/flights', flightRoutes);
 router.use('/flight-bookings', flightBookingRoutes);
 router.use('/cars', carRoutes);
 router.use('/car-bookings', carBookingRoutes);
+router.use('/cruises', cruiseRoutes);
+router.use('/cruise-bookings', cruiseBookingRoutes);
 
 // Aliases for the admin panel client, which calls these two flatter paths
 // instead of the REST-nested /users and /users/role routes above. Both

@@ -14,7 +14,8 @@
     "lint": "eslint \"src/**/*.ts\"",
     "clean": "rimraf dist",
     "seed:flights": "ts-node src/scripts/seed-flights.ts",
-    "seed:cars": "ts-node src/scripts/seed-cars.ts"
+    "seed:cars": "ts-node src/scripts/seed-cars.ts",
+    "seed:cruises": "ts-node src/scripts/seed-cruises.ts"
   },
   "author": "Coredenz",
   "license": "ISC",
