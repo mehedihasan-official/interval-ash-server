@@ -1,4 +1,10 @@
 import { AirportModel } from '../models/airport.model';
+import {
+  estimatePriceMultiplier,
+  getAirportCoords,
+  haversineKm,
+  type GeoPoint,
+} from './airport-geo';
 
 /**
  * Resolves the metadata the server needs whenever it has to remap a
@@ -7,20 +13,21 @@ import { AirportModel } from '../models/airport.model';
  * un-seeded routes) and by the booking creator (snapshotting the
  * chosen route accurately on the confirmed booking).
  *
- * `priceMultiplier` is a small nudge so cross-country itineraries feel
- * realistically more expensive than domestic ones; every derived
- * number (member discount, points, fees) inherits it via the shared
- * pricing helper.
+ * `distanceKm` is used to size the synthesized flight's duration and
+ * arrival time so a long-haul search doesn't display a domestic
+ * template's 3h 15m; `priceMultiplier` scales the retail so the fare
+ * grows with distance. Both derive from the airports' great-circle
+ * distance (airport lat/lng where known, country centroid fallback).
  */
 export interface RouteContext {
   originCity: string;
   destinationCity: string;
+  originCountry: string;
+  destinationCountry: string;
   isInternational: boolean;
+  distanceKm: number;
   priceMultiplier: number;
 }
-
-const DOMESTIC_MULTIPLIER = 1.0;
-const INTERNATIONAL_MULTIPLIER = 1.7;
 
 export async function resolveRouteContext(
   origin: string,
@@ -31,17 +38,24 @@ export async function resolveRouteContext(
     AirportModel.findOne({ code: destination }).lean(),
   ]);
 
-  const bothKnown = !!originAirport && !!destAirport;
+  const originCountry = originAirport?.country || '';
+  const destinationCountry = destAirport?.country || '';
   const isInternational =
-    bothKnown && originAirport.country !== destAirport.country;
+    !!originCountry && !!destinationCountry && originCountry !== destinationCountry;
+
+  const originCoords: GeoPoint | null = getAirportCoords(origin, originCountry);
+  const destCoords: GeoPoint | null = getAirportCoords(destination, destinationCountry);
+  const distanceKm =
+    originCoords && destCoords ? haversineKm(originCoords, destCoords) : 0;
 
   return {
     originCity: originAirport?.city || origin,
     destinationCity: destAirport?.city || destination,
+    originCountry,
+    destinationCountry,
     isInternational,
-    priceMultiplier: isInternational
-      ? INTERNATIONAL_MULTIPLIER
-      : DOMESTIC_MULTIPLIER,
+    distanceKm,
+    priceMultiplier: estimatePriceMultiplier(distanceKm),
   };
 }
 

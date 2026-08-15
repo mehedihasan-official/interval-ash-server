@@ -14,6 +14,11 @@ import {
   calculateFlightPricing,
 } from '../utils/flight-pricing';
 import { applyRouteMultiplier, resolveRouteContext } from '../utils/route-context';
+import {
+  addMinutesToTimeLabel,
+  estimateDurationMinutes,
+  formatDurationLabel,
+} from '../utils/airport-geo';
 
 type SeatSelection = string | null;
 
@@ -99,12 +104,24 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
   let snapshotOriginCity = flight.originCity;
   let snapshotDestinationCity = flight.destinationCity;
   let effectiveRetailPrice = flight.retailPrice;
+  // The snapshot's duration + arrival label track the numbers the
+  // traveler saw on the search card. If the route was synthesized from
+  // a template, that means recomputing them from the great-circle
+  // distance so the booked itinerary doesn't revert to the template's
+  // domestic 3h 15m for a long-haul.
+  let effectiveDuration = flight.duration;
+  let effectiveArrivalTime = flight.arrivalTime;
 
   if (hasRouteOverride) {
     const context = await resolveRouteContext(snapshotOrigin, snapshotDestination);
     snapshotOriginCity = context.originCity;
     snapshotDestinationCity = context.destinationCity;
     effectiveRetailPrice = applyRouteMultiplier(flight.retailPrice, context);
+    if (context.distanceKm > 0) {
+      const durationMin = estimateDurationMinutes(context.distanceKm, flight.stops);
+      effectiveDuration = formatDurationLabel(durationMin);
+      effectiveArrivalTime = addMinutesToTimeLabel(flight.departureTime, durationMin);
+    }
   }
 
   const seatSelections = body.addOns?.seatSelections ?? [];
@@ -141,8 +158,8 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
       destination: snapshotDestination,
       destinationCity: snapshotDestinationCity,
       departureTime: flight.departureTime,
-      arrivalTime: flight.arrivalTime,
-      duration: flight.duration,
+      arrivalTime: effectiveArrivalTime,
+      duration: effectiveDuration,
       cabinClass: flight.cabinClass,
       aircraft: flight.aircraft,
       stopLabel: flight.stopLabel,

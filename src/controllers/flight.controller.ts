@@ -5,7 +5,12 @@ import { AppError } from '../utils/app-error';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
 import { calculateFlightPricing } from '../utils/flight-pricing';
-import { applyRouteMultiplier, resolveRouteContext } from '../utils/route-context';
+import { applyRouteMultiplier, resolveRouteContext, type RouteContext } from '../utils/route-context';
+import {
+  addMinutesToTimeLabel,
+  estimateDurationMinutes,
+  formatDurationLabel,
+} from '../utils/airport-geo';
 
 // Plain (non-Mongoose) shape produced by .lean() plus the client-side
 // pricing block we attach on the way out. Anywhere we hand a flight to
@@ -145,14 +150,43 @@ async function synthesizeFlightsForRoute(
 
   if (templates.length === 0) return [];
 
-  return templates.map((template) => ({
+  return templates.map((template) => reshapeTemplate(template, context, origin, destination));
+}
+
+/**
+ * Rewrite a template flight for a specific origin/destination pair.
+ * Keeps the airline, aircraft, cabin, refundable flag, seat count, and
+ * baggage rules from the template (that's what makes the synthesized
+ * list feel varied) but recomputes anything the traveler would sanity-
+ * check against the route: origin/destination + their cities, retail
+ * price, flight duration, and arrival time.
+ *
+ * When we have no distance signal (both airports unlisted) we leave the
+ * template's timings alone rather than fabricate a number — retail
+ * still scales via the (minimum) multiplier.
+ */
+function reshapeTemplate(
+  template: PlainFlight,
+  context: RouteContext,
+  origin: string,
+  destination: string,
+): PlainFlight {
+  const base: PlainFlight = {
     ...template,
     origin,
     originCity: context.originCity,
     destination,
     destinationCity: context.destinationCity,
     retailPrice: applyRouteMultiplier(template.retailPrice, context),
-  }));
+  };
+
+  if (context.distanceKm > 0) {
+    const durationMin = estimateDurationMinutes(context.distanceKm, template.stops);
+    base.duration = formatDurationLabel(durationMin);
+    base.arrivalTime = addMinutesToTimeLabel(template.departureTime, durationMin);
+  }
+
+  return base;
 }
 
 /**
