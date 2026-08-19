@@ -357,32 +357,149 @@ export function haversineKm(a: GeoPoint, b: GeoPoint): number {
   return 2 * EARTH_RADIUS_KM * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
-// Cruise assumptions used to convert distance → duration. Numbers are
-// deliberately generous so short-hop demos don't come out under an hour
-// and long-hauls line up with what a member would see on a real airline
-// site (MCO→DXB ≈ 15h, JFK→LAX ≈ 6h, JFK→MIA ≈ 3h).
-const TAXI_AND_CLIMB_MIN = 35;
-const CRUISE_KM_PER_MIN = 13.3; // ~800 km/h
+// Cruise speed varies with distance: short hops spend more of their
+// time climbing and descending (so effective km/min is lower); long-
+// haul jets sit in cruise longer and often benefit from the jet stream
+// so their effective km/min is higher. This piecewise curve keeps
+// short-hops honest and pulls very-long-haul back from the ~16h a flat
+// 800 km/h cruise gave for MCO → DXB toward the ~14h real airlines
+// advertise.
 const LAYOVER_MIN_PER_STOP = 90;
 const MIN_DURATION_MIN = 55;
 
-/** Duration in whole minutes for a route of `distanceKm` with `stops`. */
+/** Whole-minutes flight duration for a route of `distanceKm` with `stops`. */
 export function estimateDurationMinutes(distanceKm: number, stops: number): number {
-  const flying = distanceKm / CRUISE_KM_PER_MIN;
-  const total =
-    TAXI_AND_CLIMB_MIN + flying + Math.max(0, stops) * LAYOVER_MIN_PER_STOP;
+  const km = Math.max(0, distanceKm);
+  let flying: number;
+  let overhead: number;
+  if (km < 500) {
+    // Regional / short-hop: 45m overhead, ~600 km/h effective.
+    overhead = 45;
+    flying = km / 10.0;
+  } else if (km < 1500) {
+    // Domestic short-medium: ~720 km/h effective.
+    overhead = 40;
+    flying = km / 12.0;
+  } else if (km < 4000) {
+    // Domestic long / short international: ~810 km/h effective.
+    overhead = 40;
+    flying = km / 13.5;
+  } else if (km < 8000) {
+    // Transatlantic / medium long-haul: ~870 km/h.
+    overhead = 45;
+    flying = km / 14.5;
+  } else {
+    // Ultra long-haul: real 787/A350 cruise ~900+ km/h.
+    overhead = 50;
+    flying = km / 15.5;
+  }
+  const total = overhead + flying + Math.max(0, stops) * LAYOVER_MIN_PER_STOP;
   return Math.max(MIN_DURATION_MIN, Math.round(total));
 }
 
 /**
- * Distance-based price multiplier applied to a template retail price.
- * A short-hop template like JFK→MIA ($320) resolves to a similar number
- * on other short routes and roughly triples on a long-haul so a Dubai
- * fare doesn't come out at $288.
+ * Piecewise base-fare-in-USD estimate for one economy seat on a route
+ * of `distanceKm`. Comes out roughly where a mainstream airline like
+ * United / Delta / British Airways lists an economy ticket — budget
+ * carriers land below via `AIRLINE_TIER`, premium carriers (Emirates,
+ * Singapore, Qatar) land above.
  */
-export function estimatePriceMultiplier(distanceKm: number): number {
-  const base = 0.7 + distanceKm * 0.00025;
-  return Math.min(4.5, Math.max(0.7, base));
+export function estimateBaseEconomyFare(distanceKm: number): number {
+  const km = Math.max(0, distanceKm);
+  if (km < 500) return 65 + km * 0.16;
+  if (km < 1500) return 75 + km * 0.12;
+  if (km < 4000) return 110 + km * 0.1;
+  if (km < 8000) return 210 + km * 0.09;
+  return 320 + km * 0.07;
+}
+
+/**
+ * Airline-tier factor applied to the base fare. Budget carriers (0.72)
+ * sit below a mainline, premium/full-service internationals sit above.
+ * Anything unknown gets 1.0 so no template disappears from the list.
+ */
+const AIRLINE_TIER: Record<string, number> = {
+  // Budget / low-cost
+  'Southwest Airlines': 0.75,
+  'Spirit Airlines': 0.7,
+  'Frontier Airlines': 0.7,
+  'JetBlue Airways': 0.85,
+  'Allegiant Air': 0.72,
+  Ryanair: 0.68,
+  EasyJet: 0.72,
+  'Wizz Air': 0.7,
+  'AirAsia': 0.7,
+  'IndiGo': 0.75,
+  // Mainline (~1.0 — default)
+  'Alaska Airlines': 0.95,
+  'American Airlines': 1.0,
+  'Delta Air Lines': 1.05,
+  'United Airlines': 1.0,
+  'Air Canada': 1.0,
+  'British Airways': 1.1,
+  'Air France': 1.05,
+  'KLM': 1.05,
+  Lufthansa: 1.1,
+  'Iberia': 1.0,
+  'Turkish Airlines': 1.05,
+  'Aeromexico': 0.95,
+  // Premium / long-haul flagship
+  'Emirates': 1.35,
+  'Qatar Airways': 1.35,
+  'Etihad Airways': 1.3,
+  'Singapore Airlines': 1.35,
+  'Cathay Pacific': 1.25,
+  'ANA': 1.3,
+  'Japan Airlines': 1.3,
+  'Korean Air': 1.2,
+  'Qantas': 1.25,
+  'Swiss International Air Lines': 1.2,
+};
+
+export function getAirlineTier(airline: string): number {
+  return AIRLINE_TIER[airline] ?? 1.0;
+}
+
+/**
+ * Multiplier applied on top of economy to price a Premium Economy /
+ * Business / First cabin. Falls back to 1x if the label is unknown
+ * so nothing crashes on an unexpected value.
+ */
+const CABIN_MULTIPLIER: Record<string, number> = {
+  Economy: 1,
+  'Premium Economy': 1.75,
+  Business: 3.8,
+  First: 7.5,
+};
+
+export function getCabinMultiplier(cabinClass: string): number {
+  return CABIN_MULTIPLIER[cabinClass] ?? 1;
+}
+
+/**
+ * Small, deterministic 0–1 pseudo-random derived from a string. Same
+ * input always produces the same output, so a given template on a
+ * given route jitters the same way every request (results don't
+ * shuffle around between refreshes).
+ */
+function seededUnit(seed: string): number {
+  let hash = 2166136261;
+  for (let i = 0; i < seed.length; i += 1) {
+    hash ^= seed.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  const normalized = ((hash >>> 0) % 10_000) / 10_000;
+  return normalized;
+}
+
+/**
+ * ±`amplitude` variance in the range [1 - amplitude, 1 + amplitude],
+ * deterministic per `seed` so a template's flight always jitters the
+ * same amount on a given route.
+ */
+export function seededVariance(seed: string, amplitude: number): number {
+  const unit = seededUnit(seed); // 0..1
+  return 1 - amplitude + unit * (2 * amplitude);
 }
 
 /** Format minutes as the "3h 15m" strings the flight schema stores. */

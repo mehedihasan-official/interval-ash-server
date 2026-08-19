@@ -13,11 +13,12 @@ import {
   FLIGHT_ADDON_PRICING,
   calculateFlightPricing,
 } from '../utils/flight-pricing';
-import { applyRouteMultiplier, resolveRouteContext } from '../utils/route-context';
+import { applyRouteRetailPrice, resolveRouteContext } from '../utils/route-context';
 import {
   addMinutesToTimeLabel,
   estimateDurationMinutes,
   formatDurationLabel,
+  seededVariance,
 } from '../utils/airport-geo';
 
 type SeatSelection = string | null;
@@ -116,9 +117,21 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
     const context = await resolveRouteContext(snapshotOrigin, snapshotDestination);
     snapshotOriginCity = context.originCity;
     snapshotDestinationCity = context.destinationCity;
-    effectiveRetailPrice = applyRouteMultiplier(flight.retailPrice, context);
+    // Same seed the search endpoint uses when it renders this exact
+    // flight, so the booking snapshot locks in the same price and
+    // duration the traveler picked (no last-mile drift between the
+    // results card and the receipt).
+    const seed = `${snapshotOrigin}-${snapshotDestination}-${flight.flightId}`;
+    effectiveRetailPrice = applyRouteRetailPrice(
+      flight.retailPrice,
+      flight.cabinClass,
+      flight.airline,
+      context,
+      seed,
+    );
     if (context.distanceKm > 0) {
-      const durationMin = estimateDurationMinutes(context.distanceKm, flight.stops);
+      const baseDurationMin = estimateDurationMinutes(context.distanceKm, flight.stops);
+      const durationMin = Math.round(baseDurationMin * seededVariance(seed, 0.05));
       effectiveDuration = formatDurationLabel(durationMin);
       effectiveArrivalTime = addMinutesToTimeLabel(flight.departureTime, durationMin);
     }

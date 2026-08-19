@@ -5,11 +5,12 @@ import { AppError } from '../utils/app-error';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
 import { calculateFlightPricing } from '../utils/flight-pricing';
-import { applyRouteMultiplier, resolveRouteContext, type RouteContext } from '../utils/route-context';
+import { applyRouteRetailPrice, resolveRouteContext, type RouteContext } from '../utils/route-context';
 import {
   addMinutesToTimeLabel,
   estimateDurationMinutes,
   formatDurationLabel,
+  seededVariance,
 } from '../utils/airport-geo';
 
 // Plain (non-Mongoose) shape produced by .lean() plus the client-side
@@ -171,17 +172,32 @@ function reshapeTemplate(
   origin: string,
   destination: string,
 ): PlainFlight {
+  // Per-template deterministic seed so every synthesized flight for
+  // this route jitters uniquely (different durations, different
+  // prices) but the same request always returns the same numbers.
+  const seed = `${origin}-${destination}-${template.flightId}`;
+
   const base: PlainFlight = {
     ...template,
     origin,
     originCity: context.originCity,
     destination,
     destinationCity: context.destinationCity,
-    retailPrice: applyRouteMultiplier(template.retailPrice, context),
+    retailPrice: applyRouteRetailPrice(
+      template.retailPrice,
+      template.cabinClass,
+      template.airline,
+      context,
+      seed,
+    ),
   };
 
   if (context.distanceKm > 0) {
-    const durationMin = estimateDurationMinutes(context.distanceKm, template.stops);
+    // ±5% duration jitter — real same-route flights vary by wind and
+    // aircraft type; without this every row shows an identical time
+    // and the list reads as fake.
+    const baseDurationMin = estimateDurationMinutes(context.distanceKm, template.stops);
+    const durationMin = Math.round(baseDurationMin * seededVariance(seed, 0.05));
     base.duration = formatDurationLabel(durationMin);
     base.arrivalTime = addMinutesToTimeLabel(template.departureTime, durationMin);
   }
