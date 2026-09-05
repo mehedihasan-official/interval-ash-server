@@ -52,12 +52,20 @@ export interface IFlightBooking extends Document {
     seatSelections: (string | null)[];
   };
   paymentMethod: 'cash' | 'points';
+  // retailPrice / discountedPrice / pointsRequired / processingFee /
+  // totalPoints are all **per traveler** for the whole itinerary;
+  // fareCash and farePoints are those multiplied out across the party
+  // (children 75%, lap infants 10%), and the grand totals add the
+  // add-ons on top.
   pricing: {
     retailPrice: number;
     discountedPrice: number;
     pointsRequired: number;
     processingFee: number;
     totalPoints: number;
+    travelers: number;
+    fareCash: number;
+    farePoints: number;
     addOnsCash: number;
     addOnsPoints: number;
     grandTotalCash: number;
@@ -141,6 +149,9 @@ const flightBookingSchema = new Schema<IFlightBooking>(
       pointsRequired: Number,
       processingFee: Number,
       totalPoints: Number,
+      travelers: Number,
+      fareCash: Number,
+      farePoints: Number,
       addOnsCash: Number,
       addOnsPoints: Number,
       grandTotalCash: Number,

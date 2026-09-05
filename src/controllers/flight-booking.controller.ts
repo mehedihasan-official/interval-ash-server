@@ -12,12 +12,14 @@ import { sendResponse } from '../utils/send-response';
 import {
   FLIGHT_ADDON_PRICING,
   calculateFlightPricing,
+  sumPassengerFareWeight,
 } from '../utils/flight-pricing';
 import { applyRouteRetailPrice, resolveRouteContext } from '../utils/route-context';
 import {
   addMinutesToTimeLabel,
   estimateDurationMinutes,
   formatDurationLabel,
+  getTripFareMultiplier,
   seededVariance,
 } from '../utils/airport-geo';
 
@@ -61,9 +63,10 @@ function countSelectedSeats(seats: SeatSelection[] | undefined) {
  * POST /api/flight-bookings
  *
  * Create a confirmed flight booking. All pricing is recomputed on the
- * server from the flight's current retail price plus the requested
- * add-ons, so the client can't submit a low-balled amount — the client
- * only tells us which flight, who's flying, and how they want to pay.
+ * server from the route, the trip type, the passenger list and the
+ * requested add-ons, so the client can't submit a low-balled amount —
+ * the client only tells us which flight, who's flying, and how they
+ * want to pay.
  */
 export const createFlightBooking = catchAsync(async (req: Request, res: Response) => {
   const body = req.body as CreateBookingBody;
@@ -102,46 +105,50 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
   const snapshotDestination = hasRouteOverride
     ? overrideDestination!
     : flight.destination;
-  let snapshotOriginCity = flight.originCity;
-  let snapshotDestinationCity = flight.destinationCity;
-  let effectiveRetailPrice = flight.retailPrice;
-  // The snapshot's duration + arrival label track the numbers the
-  // traveler saw on the search card. If the route was synthesized from
-  // a template, that means recomputing them from the great-circle
-  // distance so the booked itinerary doesn't revert to the template's
-  // domestic 3h 15m for a long-haul.
+  const tripType = body.tripType ?? 'oneway';
+
+  // Re-derive the route the same way the search endpoint did, using the
+  // same seed, so the receipt lands on exactly the price, duration and
+  // arrival time the traveler clicked on. This runs for every booking,
+  // not just overridden routes — search re-prices seeded routes too, so
+  // skipping it here is what would put the card and the receipt out of
+  // step.
+  const context = await resolveRouteContext(snapshotOrigin, snapshotDestination);
+  const seed = `${snapshotOrigin}-${snapshotDestination}-${flight.flightId}`;
+
+  const snapshotOriginCity = context.originCity;
+  const snapshotDestinationCity = context.destinationCity;
+  const effectiveRetailPrice = applyRouteRetailPrice(
+    flight.retailPrice,
+    flight.cabinClass,
+    flight.airline,
+    context,
+    seed,
+    getTripFareMultiplier(tripType),
+  );
+
   let effectiveDuration = flight.duration;
   let effectiveArrivalTime = flight.arrivalTime;
-
-  if (hasRouteOverride) {
-    const context = await resolveRouteContext(snapshotOrigin, snapshotDestination);
-    snapshotOriginCity = context.originCity;
-    snapshotDestinationCity = context.destinationCity;
-    // Same seed the search endpoint uses when it renders this exact
-    // flight, so the booking snapshot locks in the same price and
-    // duration the traveler picked (no last-mile drift between the
-    // results card and the receipt).
-    const seed = `${snapshotOrigin}-${snapshotDestination}-${flight.flightId}`;
-    effectiveRetailPrice = applyRouteRetailPrice(
-      flight.retailPrice,
-      flight.cabinClass,
-      flight.airline,
-      context,
-      seed,
-    );
-    if (context.distanceKm > 0) {
-      const baseDurationMin = estimateDurationMinutes(context.distanceKm, flight.stops);
-      const durationMin = Math.round(baseDurationMin * seededVariance(seed, 0.05));
-      effectiveDuration = formatDurationLabel(durationMin);
-      effectiveArrivalTime = addMinutesToTimeLabel(flight.departureTime, durationMin);
-    }
+  if (context.distanceKm > 0) {
+    const baseDurationMin = estimateDurationMinutes(context.distanceKm, flight.stops);
+    const durationMin = Math.round(baseDurationMin * seededVariance(seed, 0.05));
+    effectiveDuration = formatDurationLabel(durationMin);
+    effectiveArrivalTime = addMinutesToTimeLabel(flight.departureTime, durationMin);
   }
 
   const seatSelections = body.addOns?.seatSelections ?? [];
   const extraBaggage = body.addOns?.extraBaggage ?? false;
   const seatCount = countSelectedSeats(seatSelections);
 
+  // basePricing is one traveler's whole itinerary; the fare weight
+  // turns that into the party's total (children at 75%, lap infants at
+  // 10%). Booking three seats used to cost the same as booking one,
+  // which is most of why the totals read as far too cheap.
   const basePricing = calculateFlightPricing(effectiveRetailPrice);
+  const fareWeight = sumPassengerFareWeight(body.passengers);
+  const fareCash = Math.round(basePricing.discountedPrice * fareWeight * 100) / 100;
+  const farePoints = Math.round(basePricing.totalPoints * fareWeight);
+
   const addOnsCash =
     seatCount * FLIGHT_ADDON_PRICING.seatCash +
     (extraBaggage ? FLIGHT_ADDON_PRICING.baggageCash : 0);
@@ -151,10 +158,13 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
 
   const pricing = {
     ...basePricing,
+    travelers: body.passengers.length,
+    fareCash,
+    farePoints,
     addOnsCash,
     addOnsPoints,
-    grandTotalCash: Math.round((basePricing.discountedPrice + addOnsCash) * 100) / 100,
-    grandTotalPoints: basePricing.totalPoints + addOnsPoints,
+    grandTotalCash: Math.round((fareCash + addOnsCash) * 100) / 100,
+    grandTotalPoints: farePoints + addOnsPoints,
   };
 
   const booking = await FlightBookingModel.create({
@@ -180,7 +190,7 @@ export const createFlightBooking = catchAsync(async (req: Request, res: Response
       refundable: flight.refundable,
       retailPrice: effectiveRetailPrice,
     },
-    tripType: body.tripType ?? 'oneway',
+    tripType,
     departureDate: body.departureDate,
     returnDate: body.returnDate ?? null,
     passengers: body.passengers,

@@ -32,6 +32,8 @@ export const AIRPORT_COORDS: Record<string, GeoPoint> = {
   BNA: { lat: 36.1245, lng: -86.6782 },
   BOS: { lat: 42.3656, lng: -71.0096 },
   BWI: { lat: 39.1754, lng: -76.6684 },
+  CAE: { lat: 33.9388, lng: -81.1195 },
+  CHS: { lat: 32.8986, lng: -80.0405 },
   CLT: { lat: 35.214, lng: -80.9431 },
   DAL: { lat: 32.8471, lng: -96.8518 },
   DCA: { lat: 38.8512, lng: -77.0402 },
@@ -40,6 +42,9 @@ export const AIRPORT_COORDS: Record<string, GeoPoint> = {
   DTW: { lat: 42.2124, lng: -83.3534 },
   EWR: { lat: 40.6895, lng: -74.1745 },
   FLL: { lat: 26.0742, lng: -80.1506 },
+  FLO: { lat: 34.1854, lng: -79.7241 },
+  GSP: { lat: 34.8957, lng: -82.2189 },
+  HHH: { lat: 32.2244, lng: -80.6975 },
   HNL: { lat: 21.3187, lng: -157.9225 },
   IAD: { lat: 38.9531, lng: -77.4565 },
   IAH: { lat: 29.9902, lng: -95.3368 },
@@ -51,6 +56,7 @@ export const AIRPORT_COORDS: Record<string, GeoPoint> = {
   MIA: { lat: 25.7959, lng: -80.287 },
   MSP: { lat: 44.882, lng: -93.2218 },
   MSY: { lat: 29.9934, lng: -90.258 },
+  MYR: { lat: 33.6797, lng: -78.9283 },
   OAK: { lat: 37.7213, lng: -122.2211 },
   ORD: { lat: 41.9742, lng: -87.9073 },
   PDX: { lat: 45.5898, lng: -122.5951 },
@@ -398,19 +404,51 @@ export function estimateDurationMinutes(distanceKm: number, stops: number): numb
 }
 
 /**
- * Piecewise base-fare-in-USD estimate for one economy seat on a route
- * of `distanceKm`. Comes out roughly where a mainstream airline like
- * United / Delta / British Airways lists an economy ticket — budget
- * carriers land below via `AIRLINE_TIER`, premium carriers (Emirates,
- * Singapore, Qatar) land above.
+ * Piecewise base-fare-in-USD estimate for **one economy seat, one way**
+ * on a route of `distanceKm`. Comes out roughly where a mainstream
+ * airline like United / Delta / British Airways lists an economy
+ * ticket — budget carriers land below via `AIRLINE_TIER`, premium
+ * carriers (Emirates, Singapore, Qatar) land above.
+ *
+ * Written as "fare at the segment's start + slope from there" rather
+ * than "intercept + km * slope" so each anchor is a price you can
+ * check against a real route: 500 km is $112, 1,500 km is $185,
+ * 4,000 km is $310, 8,000 km is $690.
  */
 export function estimateBaseEconomyFare(distanceKm: number): number {
   const km = Math.max(0, distanceKm);
-  if (km < 500) return 65 + km * 0.16;
-  if (km < 1500) return 75 + km * 0.12;
-  if (km < 4000) return 110 + km * 0.1;
-  if (km < 8000) return 210 + km * 0.09;
-  return 320 + km * 0.07;
+  // Regional hop (LAX-SFO, ATL-MCO).
+  if (km < 500) return 68 + km * 0.088;
+  // Domestic short-medium (ORD-DEN).
+  if (km < 1500) return 112 + (km - 500) * 0.073;
+  // Domestic long / short international (JFK-MIA, JFK-LAX).
+  if (km < 4000) return 185 + (km - 1500) * 0.05;
+  // Transatlantic / medium long-haul (LAX-HNL, JFK-LHR, JFK-FCO).
+  if (km < 8000) return 310 + (km - 4000) * 0.095;
+  // Ultra long-haul (JFK-NRT, MCO-DXB, JFK-SIN). The curve flattens
+  // because airlines don't price the last 5,000 km at the same rate
+  // as the first 5,000 — a 15,000 km ticket isn't twice a 7,500 km one.
+  return 690 + (km - 8000) * 0.048;
+}
+
+/**
+ * How many one-way fares an itinerary is worth. Real airlines don't
+ * charge exactly 2x a one-way for a return — a round trip normally
+ * comes in a little under two separate one-ways — so 1.9 rather than
+ * 2. Multi-city is treated as roughly three legs at the same discount.
+ *
+ * This is what closed the biggest gap against real-world prices: the
+ * search form defaults to a round trip, but every fare shown was a
+ * single one-way seat, so the whole site read as roughly half price.
+ */
+const TRIP_FARE_MULTIPLIER: Record<string, number> = {
+  oneway: 1,
+  roundtrip: 1.9,
+  multicity: 2.7,
+};
+
+export function getTripFareMultiplier(tripType: string | undefined): number {
+  return TRIP_FARE_MULTIPLIER[String(tripType)] ?? 1;
 }
 
 /**

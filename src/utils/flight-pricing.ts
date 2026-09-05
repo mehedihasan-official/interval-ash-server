@@ -6,6 +6,12 @@
  * Kept in one place so the client's Booking Summary, the server's
  * booking record, and any future admin report all agree on the same
  * numbers instead of each recomputing them independently.
+ *
+ * Everything here is **per traveler, for the whole itinerary** — a
+ * round trip is already priced as a round trip by the time a retail
+ * price reaches this module (see getTripFareMultiplier in
+ * airport-geo.ts). Multiplying up to a booking total is the caller's
+ * job, via sumPassengerFareWeight below.
  */
 
 export interface FlightPricing {
@@ -34,6 +40,33 @@ export function calculateFlightPricing(retailPrice: number): FlightPricing {
     processingFee,
     totalPoints,
   };
+}
+
+/**
+ * What each traveler type pays, as a share of the adult fare. Mirrors
+ * how airlines actually sell: a child in their own seat is discounted,
+ * a lap infant is a token fee rather than a fare.
+ */
+const PASSENGER_FARE_WEIGHT: Record<string, number> = {
+  Adult: 1,
+  Child: 0.75,
+  Infant: 0.1,
+};
+
+/**
+ * Total fare weight for a passenger list — 2 adults + 1 child is 2.75
+ * adult fares, not 3. An empty or unrecognized list still counts as
+ * one traveler so a booking can never total $0.
+ */
+export function sumPassengerFareWeight(
+  passengers: { type?: string }[] | undefined,
+): number {
+  if (!Array.isArray(passengers) || passengers.length === 0) return 1;
+  const weight = passengers.reduce(
+    (sum, passenger) => sum + (PASSENGER_FARE_WEIGHT[String(passenger?.type)] ?? 1),
+    0,
+  );
+  return weight > 0 ? weight : 1;
 }
 
 export const FLIGHT_ADDON_PRICING = {

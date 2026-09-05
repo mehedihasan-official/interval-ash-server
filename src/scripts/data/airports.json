@@ -4146,6 +4146,12 @@
     "country": "United States"
   },
   {
+    "code": "CHS",
+    "city": "Charleston",
+    "name": "Charleston International Airport",
+    "country": "United States"
+  },
+  {
     "code": "CLT",
     "city": "Charlotte",
     "name": "Charlotte Douglas International Airport",
@@ -4167,6 +4173,12 @@
     "code": "CLE",
     "city": "Cleveland",
     "name": "Cleveland Hopkins International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "CAE",
+    "city": "Columbia",
+    "name": "Columbia Metropolitan Airport",
     "country": "United States"
   },
   {
@@ -4218,6 +4230,12 @@
     "country": "United States"
   },
   {
+    "code": "FLO",
+    "city": "Florence",
+    "name": "Florence Regional Airport",
+    "country": "United States"
+  },
+  {
     "code": "FLL",
     "city": "Fort Lauderdale",
     "name": "Fort Lauderdale Hollywood International Airport",
@@ -4257,6 +4275,18 @@
     "code": "GSO",
     "city": "Greensboro",
     "name": "Piedmont Triad International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "GSP",
+    "city": "Greenville",
+    "name": "Greenville-Spartanburg International Airport",
+    "country": "United States"
+  },
+  {
+    "code": "HHH",
+    "city": "Hilton Head Island",
+    "name": "Hilton Head Airport",
     "country": "United States"
   },
   {
@@ -4377,6 +4407,12 @@
     "code": "MLU",
     "city": "Monroe",
     "name": "Monroe Regional Airport",
+    "country": "United States"
+  },
+  {
+    "code": "MYR",
+    "city": "Myrtle Beach",
+    "name": "Myrtle Beach International Airport",
     "country": "United States"
   },
   {

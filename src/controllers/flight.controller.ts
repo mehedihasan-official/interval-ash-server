@@ -10,6 +10,7 @@ import {
   addMinutesToTimeLabel,
   estimateDurationMinutes,
   formatDurationLabel,
+  getTripFareMultiplier,
   seededVariance,
 } from '../utils/airport-geo';
 
@@ -83,13 +84,8 @@ function parseFilters(req: Request): ParsedFilters {
   };
 }
 
-function buildMongoFilter(
-  filters: ParsedFilters,
-  route?: { origin: string; destination: string },
-): FilterQuery<IFlight> {
+function buildMongoFilter(filters: ParsedFilters): FilterQuery<IFlight> {
   const filter: FilterQuery<IFlight> = {};
-  if (route?.origin) filter.origin = route.origin;
-  if (route?.destination) filter.destination = route.destination;
   if (filters.cabinClass) filter.cabinClass = filters.cabinClass;
   if (filters.airline) filter.airline = filters.airline;
   if (filters.refundableOnly) filter.refundable = true;
@@ -127,22 +123,21 @@ function applyFiltersInMemory(
 }
 
 /**
- * Build a set of flight results for a route that isn't directly seeded
- * in the DB (which is most of the ~615,000 possible airport pairs among
- * our 785 seeded airports). We take every seeded flight as a *template*
- * for its airline/aircraft/times/cabin/baggage/refundable properties,
- * then rewrite origin/destination to match what the user asked for.
+ * Build the result list for a route. We take every seeded flight as a
+ * *template* for its airline/aircraft/times/cabin/baggage/refundable
+ * properties, then rewrite origin/destination to match what the user
+ * asked for and re-price it for the actual route and trip type.
  *
- * Pricing is nudged so international itineraries feel realistically
- * more expensive than domestic ones — we bump the retail price by a
- * multiplier tied to whether the two airports are in different
- * countries. Every other number the client shows (member price, points,
- * fees) is derived from retail via the shared pricing helper, so the
- * bump propagates consistently.
+ * This runs for every route, including the ~20 that are seeded
+ * directly. It used to only run for un-seeded pairs, which meant those
+ * 20 routes kept their flat template fare — blind to trip type, and
+ * the only rows on the whole site whose price didn't track distance.
+ * One path means the results card and the receipt agree everywhere.
  */
-async function synthesizeFlightsForRoute(
+async function buildRouteFlights(
   origin: string,
   destination: string,
+  tripType: string,
 ): Promise<PlainFlight[]> {
   const [templates, context] = await Promise.all([
     FlightModel.find({}).lean<PlainFlight[]>(),
@@ -151,14 +146,17 @@ async function synthesizeFlightsForRoute(
 
   if (templates.length === 0) return [];
 
-  return templates.map((template) => reshapeTemplate(template, context, origin, destination));
+  const tripFareMultiplier = getTripFareMultiplier(tripType);
+  return templates.map((template) =>
+    reshapeTemplate(template, context, origin, destination, tripFareMultiplier),
+  );
 }
 
 /**
  * Rewrite a template flight for a specific origin/destination pair.
  * Keeps the airline, aircraft, cabin, refundable flag, seat count, and
- * baggage rules from the template (that's what makes the synthesized
- * list feel varied) but recomputes anything the traveler would sanity-
+ * baggage rules from the template (that's what makes the result list
+ * feel varied) but recomputes anything the traveler would sanity-
  * check against the route: origin/destination + their cities, retail
  * price, flight duration, and arrival time.
  *
@@ -171,10 +169,11 @@ function reshapeTemplate(
   context: RouteContext,
   origin: string,
   destination: string,
+  tripFareMultiplier: number,
 ): PlainFlight {
-  // Per-template deterministic seed so every synthesized flight for
-  // this route jitters uniquely (different durations, different
-  // prices) but the same request always returns the same numbers.
+  // Per-template deterministic seed so every flight on this route
+  // jitters uniquely (different durations, different prices) but the
+  // same request always returns the same numbers.
   const seed = `${origin}-${destination}-${template.flightId}`;
 
   const base: PlainFlight = {
@@ -189,6 +188,7 @@ function reshapeTemplate(
       template.airline,
       context,
       seed,
+      tripFareMultiplier,
     ),
   };
 
@@ -208,41 +208,40 @@ function reshapeTemplate(
 /**
  * GET /api/flights
  *
- * Search flights by origin/destination and optional filters. If the
- * requested route isn't seeded in the flights collection, we synthesize
- * a full set of results on-the-fly (see synthesizeFlightsForRoute) so
- * every airport pair a member picks from the autocomplete produces
- * on-route options — no more "here's some random JFK-MIA flights when
+ * Search flights by origin/destination, trip type, and optional
+ * filters. Every airport pair a member picks from the autocomplete
+ * produces on-route options, built from the seeded templates by
+ * buildRouteFlights — no more "here's some random JFK-MIA flights when
  * you asked for MCO-DXB" surprises.
+ *
+ * `tripType` matters to the price, not just the itinerary: a round
+ * trip is quoted for both legs, the way an airline site quotes it.
+ * It defaults to `oneway` so a caller that omits it gets the cheaper,
+ * more conservative number rather than a surprise doubling.
  */
 export const searchFlights = catchAsync(async (req: Request, res: Response) => {
   const origin = String(req.query.origin || '').trim().toUpperCase();
   const destination = String(req.query.destination || '').trim().toUpperCase();
+  const tripType = String(req.query.tripType || 'oneway').trim();
   const filters = parseFilters(req);
 
-  // Try the exact route first — if someone happens to search a route we
-  // did seed (say JFK→MIA), we prefer the real records over synthesis.
-  let flights = await FlightModel.find(
-    buildMongoFilter(filters, origin && destination ? { origin, destination } : undefined),
-  ).lean<PlainFlight[]>();
-
-  let exactMatch = flights.length > 0;
-
-  // No direct match on the route → synthesize. This is the common case
-  // because we only seed 20 routes, so 99%+ of user searches take this
-  // branch and receive flights whose origin/destination match exactly
-  // what they typed.
-  if (!exactMatch && origin && destination && origin !== destination) {
-    const synthesized = await synthesizeFlightsForRoute(origin, destination);
-    flights = applyFiltersInMemory(synthesized, filters);
-    // Synthesized results are on-route by construction, so it's still
-    // an exact match from the traveler's perspective.
-    exactMatch = flights.length > 0;
-  }
+  // With a route we always rebuild from templates so the price reflects
+  // this route and this trip type. Without one (an unfiltered browse of
+  // the raw inventory) there's nothing to rebuild against, so the seeded
+  // records go out as they are and Mongo does the filtering.
+  const flights =
+    origin && destination && origin !== destination
+      ? applyFiltersInMemory(
+          await buildRouteFlights(origin, destination, tripType),
+          filters,
+        )
+      : await FlightModel.find(buildMongoFilter(filters)).lean<PlainFlight[]>();
 
   sendResponse(res, 200, 'Flights retrieved successfully', {
     flights: flights.map(withPricing),
-    exactMatch,
+    // Results are on-route by construction, so anything we return is an
+    // exact match from the traveler's perspective.
+    exactMatch: flights.length > 0,
     total: flights.length,
   });
 });

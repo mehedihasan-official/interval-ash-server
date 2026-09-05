@@ -62,16 +62,18 @@ export async function resolveRouteContext(
 }
 
 /**
- * Compute a realistic retail price for one seat on this route.
+ * Compute a realistic retail price for one traveler on this route,
+ * covering the whole itinerary (both legs of a round trip, not one).
  *
  * Ignores the template's own retail — carrying it forward is what led
  * to a JFK→MIA $110 Southwest template landing as $427 on MCO→DXB and
  * a $2100 Delta business template landing as $8148 on the same list.
  * Instead we derive from the route's economy base fare and layer in
- * airline tier and cabin class, then a small deterministic ±8%
- * jitter so different templates on the same route come out with
- * plausibly different fares (they're all reading off the same
- * economy base, so the underlying spread stays coherent).
+ * airline tier, cabin class, and how many one-way fares the trip type
+ * is worth, then a small deterministic ±8% jitter so different
+ * templates on the same route come out with plausibly different fares
+ * (they're all reading off the same economy base, so the underlying
+ * spread stays coherent).
  *
  * Falls back to the template retail (bounded) when we have no
  * distance signal, so nothing crashes on an unlisted airport pair.
@@ -82,13 +84,15 @@ export function applyRouteRetailPrice(
   airline: string,
   context: RouteContext,
   varianceSeed: string,
+  tripFareMultiplier = 1,
 ): number {
   if (context.distanceKm <= 0 || context.baseEconomyFare <= 0) {
-    return Math.max(79, Math.round(templateRetail));
+    return Math.max(79, Math.round(templateRetail * tripFareMultiplier));
   }
   const airlineTier = getAirlineTier(airline);
   const cabinMult = getCabinMultiplier(cabinClass);
   const jitter = seededVariance(varianceSeed, 0.08); // ±8%
-  const raw = context.baseEconomyFare * airlineTier * cabinMult * jitter;
+  const raw =
+    context.baseEconomyFare * airlineTier * cabinMult * tripFareMultiplier * jitter;
   return Math.max(79, Math.round(raw));
 }
