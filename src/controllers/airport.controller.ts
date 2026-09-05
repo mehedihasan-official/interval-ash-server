@@ -54,3 +54,77 @@ export const getAirportByCode = catchAsync(async (req: Request, res: Response) =
 
   sendResponse(res, 200, 'Airport retrieved successfully', airport);
 });
+
+/**
+ * POST /api/airports (admin)
+ *
+ * Add an airport to the reference list the flight search autocompletes
+ * against. Admin-only: this is shared reference data, and a bad entry
+ * here shows up in every member's search box.
+ *
+ * A flight can only be created between airports that already exist here
+ * (see createFlight), so this is the first step when opening up a new
+ * destination.
+ */
+export const createAirport = catchAsync(async (req: Request, res: Response) => {
+  const body = (req.body ?? {}) as Record<string, unknown>;
+  const code = String(body.code ?? '').trim().toUpperCase();
+  const city = String(body.city ?? '').trim();
+  const name = String(body.name ?? '').trim();
+  const country = String(body.country ?? '').trim();
+
+  const missing = [
+    !code && 'code',
+    !city && 'city',
+    !name && 'name',
+    !country && 'country',
+  ].filter(Boolean);
+  if (missing.length > 0) {
+    throw new AppError(
+      `Airport ${missing.join(', ')} ${missing.length > 1 ? 'are' : 'is'} required`,
+      400,
+    );
+  }
+
+  if (!/^[A-Z]{3}$/.test(code)) {
+    throw new AppError(
+      'Airport code must be a 3-letter IATA code, for example MYR',
+      400,
+    );
+  }
+
+  // Checked up front so the admin gets "MYR is already Myrtle Beach
+  // International" instead of the generic unique-index collision.
+  const existing = await AirportModel.findOne({ code });
+  if (existing) {
+    throw new AppError(
+      `${code} already exists — it is ${existing.name} in ${existing.city}.`,
+      409,
+    );
+  }
+
+  // Coordinates are optional, but both or neither — half a coordinate
+  // pair is worse than none, because it silently reads as (lat, 0).
+  const latitude = body.latitude === '' || body.latitude == null ? null : Number(body.latitude);
+  const longitude = body.longitude === '' || body.longitude == null ? null : Number(body.longitude);
+  if ((latitude === null) !== (longitude === null)) {
+    throw new AppError('Give both latitude and longitude, or neither', 400);
+  }
+  if (latitude !== null && longitude !== null) {
+    if (!Number.isFinite(latitude) || latitude < -90 || latitude > 90) {
+      throw new AppError('Latitude must be a number between -90 and 90', 400);
+    }
+    if (!Number.isFinite(longitude) || longitude < -180 || longitude > 180) {
+      throw new AppError('Longitude must be a number between -180 and 180', 400);
+    }
+  }
+
+  const created = await AirportModel.create({
+    code,
+    city,
+    name,
+    country,
+    ...(latitude !== null && longitude !== null ? { latitude, longitude } : {}),
+  });
+  sendResponse(res, 201, 'Airport created successfully', created);
+});

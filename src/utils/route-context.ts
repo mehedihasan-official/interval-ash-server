@@ -31,6 +31,29 @@ export interface RouteContext {
   baseEconomyFare: number;
 }
 
+/**
+ * Coordinates for one end of a route, best source first:
+ *   1. lat/lng stored on the airport record (set when an admin adds an
+ *      airport through the panel) — always the real runway location.
+ *   2. the built-in AIRPORT_COORDS hub table.
+ *   3. the country centroid, which only gets the order of magnitude right.
+ *
+ * Without (1), every flight to an admin-added airport would be measured
+ * against its country's geographic centre — a 50-minute hop coming out
+ * as two and a half hours.
+ */
+function coordsFor(
+  code: string,
+  airport: { latitude?: number | null; longitude?: number | null } | null,
+  country: string,
+): GeoPoint | null {
+  const { latitude, longitude } = airport ?? {};
+  if (typeof latitude === 'number' && typeof longitude === 'number') {
+    return { lat: latitude, lng: longitude };
+  }
+  return getAirportCoords(code, country);
+}
+
 export async function resolveRouteContext(
   origin: string,
   destination: string,
@@ -45,8 +68,8 @@ export async function resolveRouteContext(
   const isInternational =
     !!originCountry && !!destinationCountry && originCountry !== destinationCountry;
 
-  const originCoords: GeoPoint | null = getAirportCoords(origin, originCountry);
-  const destCoords: GeoPoint | null = getAirportCoords(destination, destinationCountry);
+  const originCoords = coordsFor(origin, originAirport, originCountry);
+  const destCoords = coordsFor(destination, destAirport, destinationCountry);
   const distanceKm =
     originCoords && destCoords ? haversineKm(originCoords, destCoords) : 0;
 

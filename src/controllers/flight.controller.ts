@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { FilterQuery } from 'mongoose';
+import { AirportModel } from '../models/airport.model';
 import { FlightModel, IFlight } from '../models/flight.model';
 import { AppError } from '../utils/app-error';
 import { catchAsync } from '../utils/catch-async';
@@ -63,6 +64,13 @@ function withPricing(flight: PlainFlight): ClientFlight {
  * Mongo to apply cabin/airline/refundable/price filters for us, so the
  * same rules live here and get applied to the plain objects instead.
  */
+const CABIN_CLASSES: readonly IFlight['cabinClass'][] = [
+  'Economy',
+  'Premium Economy',
+  'Business',
+  'First',
+];
+
 interface ParsedFilters {
   cabinClass: string;
   airline: string;
@@ -270,15 +278,141 @@ export const getFlightById = catchAsync(async (req: Request, res: Response) => {
 
 /**
  * POST /api/flights (admin)
+ *
  * Create a new flight offering. Admin-only so members can't seed
  * arbitrary inventory into the search results.
+ *
+ * Both airports must already exist in the airports collection. A flight
+ * to a code nobody can pick from the autocomplete is unreachable, and
+ * without an airport record the route has no coordinates, so its
+ * duration and price would fall back to the template value rather than
+ * the real distance. Rejecting it up front with a pointer to "Add
+ * Airport" beats silently storing a flight that never surfaces.
+ *
+ * `duration`, `arrivalTime` and `retailPrice` are optional: left blank,
+ * they're derived from the route the same way every other flight on the
+ * site is, so an admin only has to supply what they actually know.
  */
 export const createFlight = catchAsync(async (req: Request, res: Response) => {
-  const body = req.body;
-  if (!body || Object.keys(body).length === 0) {
+  const body = (req.body ?? {}) as Record<string, unknown>;
+  if (Object.keys(body).length === 0) {
     throw new AppError('Flight data cannot be empty', 400);
   }
-  const created = await FlightModel.create(body);
+
+  const text = (key: string) => String(body[key] ?? '').trim();
+  const flightId = text('flightId');
+  const airline = text('airline');
+  const flightNumber = text('flightNumber');
+  const origin = text('origin').toUpperCase();
+  const destination = text('destination').toUpperCase();
+  const departureTime = text('departureTime');
+  const aircraft = text('aircraft');
+
+  const missing = [
+    !flightId && 'flight ID',
+    !airline && 'airline',
+    !flightNumber && 'flight number',
+    !origin && 'origin',
+    !destination && 'destination',
+    !departureTime && 'departure time',
+    !aircraft && 'aircraft',
+  ].filter(Boolean);
+  if (missing.length > 0) {
+    throw new AppError(
+      `Flight ${missing.join(', ')} ${missing.length > 1 ? 'are' : 'is'} required`,
+      400,
+    );
+  }
+  if (origin === destination) {
+    throw new AppError('Origin and destination must be different airports', 400);
+  }
+
+  const existing = await FlightModel.findOne({ flightId });
+  if (existing) {
+    throw new AppError(
+      `Flight ID ${flightId} is already used by ${existing.airline} ${existing.flightNumber}. Pick a different one.`,
+      409,
+    );
+  }
+
+  const [originAirport, destinationAirport] = await Promise.all([
+    AirportModel.findOne({ code: origin }).lean(),
+    AirportModel.findOne({ code: destination }).lean(),
+  ]);
+  const unknown = [
+    !originAirport && origin,
+    !destinationAirport && destination,
+  ].filter(Boolean);
+  if (unknown.length > 0) {
+    throw new AppError(
+      `${unknown.join(' and ')} ${unknown.length > 1 ? 'are' : 'is'} not in the airport list yet. Add ${unknown.length > 1 ? 'them' : 'it'} under Add Airport first.`,
+      400,
+    );
+  }
+
+  const cabinClass = (CABIN_CLASSES as readonly string[]).includes(text('cabinClass'))
+    ? (text('cabinClass') as IFlight['cabinClass'])
+    : 'Economy';
+  const stops = Math.max(0, Number(body.stops) || 0);
+
+  // Fill in whatever the admin left blank from the route itself, using
+  // the same helpers the search endpoint uses, so a hand-added flight
+  // sits on the same curve as every seeded one.
+  //
+  // Only airports with known coordinates give a distance to work from
+  // (see AIRPORT_COORDS). Without one we ask for the number rather than
+  // inventing it — the fallbacks would quietly produce a 55m, $79
+  // flight regardless of how far apart the two airports really are.
+  const context = await resolveRouteContext(origin, destination);
+  const hasDistance = context.distanceKm > 0;
+
+  const submittedDuration = text('duration');
+  const submittedArrival = text('arrivalTime');
+  if (!hasDistance && (!submittedDuration || !submittedArrival)) {
+    throw new AppError(
+      `We can't measure ${origin} to ${destination} automatically. Please fill in the duration and arrival time.`,
+      400,
+    );
+  }
+  const durationMinutes = estimateDurationMinutes(context.distanceKm, stops);
+  const duration = submittedDuration || formatDurationLabel(durationMinutes);
+  const arrivalTime =
+    submittedArrival || addMinutesToTimeLabel(departureTime, durationMinutes);
+
+  const submittedPrice = Number(body.retailPrice);
+  const hasSubmittedPrice = Number.isFinite(submittedPrice) && submittedPrice > 0;
+  if (!hasSubmittedPrice && !hasDistance) {
+    throw new AppError(
+      `We can't work out a fare for ${origin} to ${destination} automatically. Please enter a retail price.`,
+      400,
+    );
+  }
+  const retailPrice = hasSubmittedPrice
+    ? Math.round(submittedPrice)
+    : applyRouteRetailPrice(0, cabinClass, airline, context, flightId);
+
+  const created = await FlightModel.create({
+    flightId,
+    airline,
+    airlineLogo: text('airlineLogo'),
+    flightNumber,
+    origin,
+    originCity: text('originCity') || originAirport!.city,
+    destination,
+    destinationCity: text('destinationCity') || destinationAirport!.city,
+    departureTime,
+    arrivalTime,
+    duration,
+    stops,
+    stopLabel: text('stopLabel') || (stops === 0 ? 'Nonstop' : `${stops} stop${stops > 1 ? 's' : ''}`),
+    cabinClass,
+    retailPrice,
+    seatsAvailable: Math.max(0, Number(body.seatsAvailable) || 0),
+    aircraft,
+    refundable: body.refundable === true || body.refundable === 'true',
+    baggage: text('baggage') || '1 carry-on included',
+  });
+
   const plain = created.toObject() as PlainFlight;
   sendResponse(res, 201, 'Flight created successfully', withPricing(plain));
 });

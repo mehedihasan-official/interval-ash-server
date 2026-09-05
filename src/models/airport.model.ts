@@ -11,6 +11,13 @@ export interface IAirport extends Document {
   city: string;
   name: string;
   country: string;
+  // Optional, and only set on airports added through the admin panel.
+  // The built-in AIRPORT_COORDS table (utils/airport-geo.ts) covers the
+  // major hubs; for anything outside it, storing the real lat/lng here
+  // is what stops a route from being measured against the country's
+  // geographic centre instead of the actual runway.
+  latitude?: number;
+  longitude?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -40,6 +47,8 @@ const airportSchema = new Schema<IAirport>(
       required: [true, 'Airport country is required'],
       trim: true,
     },
+    latitude: { type: Number, min: -90, max: 90 },
+    longitude: { type: Number, min: -180, max: 180 },
   },
   { timestamps: true }
 );
