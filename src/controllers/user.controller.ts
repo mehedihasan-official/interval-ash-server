@@ -3,6 +3,10 @@ import { UserModel } from '../models/user.model';
 import { catchAsync } from '../utils/catch-async';
 import { sendResponse } from '../utils/send-response';
 import { AppError } from '../utils/app-error';
+import {
+  isAuthorizedUserEmail,
+  unauthorizedUserMessage,
+} from '../config/auth';
 
 /**
  * GET /api/users
@@ -55,8 +59,16 @@ export const createUser = catchAsync(async (req: Request, res: Response) => {
   const normalizedEmail = String(email).trim().toLowerCase();
   const existingUser = await UserModel.findOne({ email: normalizedEmail });
   if (existingUser) {
+    if (!existingUser.isAdmin && !isAuthorizedUserEmail(normalizedEmail)) {
+      throw new AppError(unauthorizedUserMessage, 403);
+    }
+
     sendResponse(res, 200, 'User already exists', existingUser);
     return;
+  }
+
+  if (!isAuthorizedUserEmail(normalizedEmail)) {
+    throw new AppError(unauthorizedUserMessage, 403);
   }
 
   const newUser = await UserModel.create({
