@@ -9,21 +9,21 @@ import { sendResponse } from "../utils/send-response";
  * GET /api/airports
  *
  * Backs the airport autocomplete on the flight search form. Callers
- * pass a `search` query string (an IATA code, city name, or airport
- * name fragment) and get back a short list of matches. When no search
- * value is provided we still return the first page of airports so an
- * empty dropdown doesn't feel broken; a `limit` is enforced either way
- * because the collection has ~800 documents and the dropdown only shows
- * a handful at a time.
+ * pass a `search` query string (an IATA code, city, airport, state, or
+ * state/province code fragment) and get back matching airports. Region
+ * searches can legitimately return many airports, so searched requests
+ * allow a larger page while empty requests still return a small first page.
  */
 export const searchAirports = catchAsync(
   async (req: Request, res: Response) => {
     const search = String(req.query.search || "").trim();
     const parsedLimit = Number.parseInt(String(req.query.limit), 10);
+    const maxLimit = search ? 100 : 50;
+    const defaultLimit = search ? 100 : 10;
     const limit =
       Number.isFinite(parsedLimit) && parsedLimit > 0
-        ? Math.min(parsedLimit, 50)
-        : 10;
+        ? Math.min(parsedLimit, maxLimit)
+        : defaultLimit;
 
     const filter: FilterQuery<IAirport> = {};
     if (search) {

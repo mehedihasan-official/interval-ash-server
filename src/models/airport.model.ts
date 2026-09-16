@@ -64,9 +64,12 @@ const airportSchema = new Schema<IAirport>(
   { timestamps: true },
 );
 
-// Keep the existing compound search pattern and extend it to region fields,
-// since the autocomplete does a regex OR-match across the same airport data.
-airportSchema.index({ code: 1, city: 1, name: 1, state: 1, stateCode: 1 });
+// The autocomplete OR-matches across these fields. Separate indexes let
+// MongoDB consider the relevant index for each branch of the OR query.
+airportSchema.index({ city: 1 });
+airportSchema.index({ name: 1 });
+airportSchema.index({ state: 1 });
+airportSchema.index({ stateCode: 1 });
 
 export const AirportModel = model<IAirport>(
   "Airport",
